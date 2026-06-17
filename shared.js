@@ -81,20 +81,28 @@ document.getElementById('cookie-modal')?.addEventListener('click', e => {
 });
 
 // ── NYÁRI TÁBOR POP-UP ──
+// Csak az index.html-en jelenik meg, és csak egyszer per session
 (function() {
   const modal = document.getElementById('tabor-modal');
-  if (!modal) return;
+  if (!modal) return; // Más oldalakon nincs popup
 
-  // Ne mutassuk ha a user bejelölte "ne mutasd újra"
+  // Ha már látta ebben a sessionben, nem mutatjuk
+  try {
+    if (sessionStorage.getItem('tabor_shown') === '1') return;
+  } catch {}
+  
+  // Ha a user egyszer "Ne jelenjen meg újra" bejelölte, akkor sem
   try {
     if (localStorage.getItem(TABOR_KEY) === 'hidden') return;
   } catch {}
 
-  // 2.5 másodperc késleltetéssel jelenik meg
+  // 2 másodperc késleltetéssel jelenik meg
   setTimeout(() => {
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
-  }, 2500);
+    // Megjelölés: ebben a sessionben már mutattuk
+    try { sessionStorage.setItem('tabor_shown', '1'); } catch {}
+  }, 2000);
 
   function closeTaborModal() {
     modal.classList.remove('open');
