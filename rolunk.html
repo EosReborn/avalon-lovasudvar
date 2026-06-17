@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rólunk – Avalon Lovasudvar</title>
+<meta name="description" content="Ismerj meg minket! Az Avalon Lovasudvar Győrtől 7 km-re, Abdán, a pagony szívében várja a lovak és a természet szerelmeseit.">
+<link rel="stylesheet" href="shared.css">
+<style>
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.about-img { border-radius: 2px; overflow: hidden; }
+.about-img img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; }
+.about-img + .about-img { margin-top: 16px; }
+.team-section { background: #F0EBE0; padding: 80px 64px; }
+.values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; margin-top: 48px; }
+.value-card { padding: 32px; background: #fff; border: 0.5px solid var(--border); border-radius: 2px; }
+.value-icon { font-size: 28px; margin-bottom: 16px; }
+.value-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; margin-bottom: 10px; }
+.value-desc { font-size: 13px; color: var(--ink-mid); line-height: 1.7; }
+@media(max-width:768px){ .about-grid,.values-grid{grid-template-columns:1fr;gap:32px;} .team-section{padding:60px 24px;} }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Avalon <em>Lovasudvar</em></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="rolunk.html" class="active">Rólunk</a></li>
+    <li><a href="lovasoktatas.html">Lovasoktatás</a></li>
+    <li><a href="elmenypark.html">Élménypark</a></li>
+    <li><a href="galeria.html">Galéria</a></li>
+    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+  </ul>
+  <a href="kapcsolat.html" class="nav-cta">Foglalj helyet</a>
+  <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://static.wixstatic.com/media/d55dbd_e5b83d8ebe654da697e2aee7b4ce269b~mv2.jpg/v1/fill/w_1920,h_800,al_c,q_85,enc_avif,quality_auto/d55dbd_e5b83d8ebe654da697e2aee7b4ce269b~mv2.jpg')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="page-hero-eyebrow">Ismerj meg minket</p>
+    <h1 class="page-hero-title">Rólunk</h1>
+  </div>
+</div>
+
+<section>
+  <div class="about-grid">
+    <div>
+      <p class="section-label">A mi történetünk</p>
+      <h2 class="section-title">Abdán, a pagony <em>szívében</em></h2>
+      <div class="divider"></div>
+      <p class="section-body" style="margin-bottom:20px;">Győrtől mindössze 7 km-re, Abdán, gyönyörű erdei környezetben szeretettel vár minden lovast, lovagolni vágyót, lótulajdonost és állatbarátot az Avalon Lovasudvar és Élménypark!</p>
+      <p class="section-body" style="margin-bottom:20px;">Parkunkban a lovaglás kipróbálása mellett számos nagyszerű program és időtöltési lehetőség vár mindenkire. Óriási játszótér, elektromos quadpályával, állatsimogatókkal és rengeteg érdekes állattal várjuk a Pagony szívében.</p>
+      <p class="section-body" style="margin-bottom:20px;">Lovardánkban a gyakorlati oktatás mellett az elméleti oktatásra is nagy figyelmet fordítunk! Igényes bértartási és lovaglási lehetőséget biztosítunk a környék egyik leghangulatosabb lovardájában.</p>
+      <p class="section-body">Lovardánk várja kicsiktől a nagyokig, kezdőktől a haladókig és a versenyző szinten lévő lovasokat egyaránt!</p>
+      <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="lovasoktatas.html" class="btn-gold">Lovasoktatás →</a>
+        <a href="kapcsolat.html" class="btn-outline">Kapcsolatfelvétel</a>
+      </div>
+    </div>
+    <div>
+      <div class="about-img">
+        <img src="https://static.wixstatic.com/media/d55dbd_71d90cf20f3f49008eea84dd1d0947f3~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85,enc_avif,quality_auto/IMG_5722.jpg" alt="Avalon lovak" loading="lazy">
+      </div>
+      <div class="about-img">
+        <img src="https://static.wixstatic.com/media/d55dbd_db9d73c12f17450db0a316932bb3bef4~mv2.jpg/v1/fill/w_900,h_600,al_c,q_85,enc_avif,quality_auto/IMG_5481.jpg" alt="Lovasoktatás" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="team-section">
+  <p class="section-label">Értékeink</p>
+  <h2 class="section-title">Miért válaszd az <em>Avalont</em>?</h2>
+  <div class="divider"></div>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-icon">🐴</div>
+      <h3 class="value-title">Szakértelem</h3>
+      <p class="value-desc">Képzett oktatói és edzői csapat biztosítja a színvonalas oktatást minden szinten, a kezdőktől a versenyzőkig.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">🌿</div>
+      <h3 class="value-title">Természet</h3>
+      <p class="value-desc">Gyönyörű erdei környezetben, a pagony szívében találod meg az igazi nyugalmat és feltöltődést.</p>
+    </div>
+    <div class="value-card">
+      <div class="value-icon">👨‍👩‍👧‍👦</div>
+      <h3 class="value-title">Minden korosztálynak</h3>
+      <p class="value-desc">Kicsiktől a nagyokig, póni sétától a díjlovaglásig – mindenkinek megtaláljuk a megfelelő programot.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><span class="footer-logo">Avalon Lovasudvar</span><span class="footer-tagline">Győrtől 7 km-re, Abdán, erdei környezetben.</span></div>
+    <div class="footer-col"><h4>Oldalak</h4><a href="rolunk.html">Rólunk</a><a href="lovasoktatas.html">Lovasoktatás</a><a href="elmenypark.html">Élménypark</a><a href="galeria.html">Galéria</a><a href="kapcsolat.html">Kapcsolat</a></div>
+    <div class="footer-col"><h4>Elérhetőség</h4><p>9151 Abda, Pagony 27.</p><a href="tel:+36303271278">+36 30 327 1278</a><a href="mailto:info@avalonlovasudvar.com">info@avalonlovasudvar.com</a></div>
+    <div class="footer-col"><h4>Közösség</h4><a href="https://www.facebook.com/avalonlovasudvar" target="_blank">Facebook</a><a href="https://www.instagram.com/avalonlovasudvar_elmenypark/" target="_blank">Instagram</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Avalon Lovasudvar – KLUGTEK Kft.</span>
+    <div class="footer-legal"><a href="adatvedelem.html">Adatvédelmi tájékoztató</a><a href="cookie.html">Cookie szabályzat</a></div>
+  </div>
+</footer>
+<div id="cookie-banner" class="hidden"><p class="cookie-text">Weboldalunk sütiket használ. <a href="cookie.html">Részletek</a></p><div class="cookie-btns"><button class="cookie-settings" id="cookieSettings">Beállítások</button><button class="cookie-decline" id="cookieDecline">Csak szükséges</button><button class="cookie-accept" id="cookieAccept">Elfogadom</button></div></div>
+<div id="cookie-modal"><div class="cookie-modal-box"><div class="cookie-modal-header"><h2>Cookie beállítások</h2></div><div class="cookie-modal-body"><div class="cookie-category"><div class="cookie-cat-header"><h3>Szükséges sütik</h3><label class="toggle-wrap"><input type="checkbox" checked disabled><span class="toggle-slider"></span></label></div><p class="cookie-cat-desc">Az oldal működéséhez elengedhetetlen sütik.</p></div><div class="cookie-category"><div class="cookie-cat-header"><h3>Analitikai sütik</h3><label class="toggle-wrap"><input type="checkbox" id="toggleAnalytics"><span class="toggle-slider"></span></label></div><p class="cookie-cat-desc">Google Analytics – anonim látogatottsági statisztika.</p></div><div class="cookie-category"><div class="cookie-cat-header"><h3>Marketing sütik</h3><label class="toggle-wrap"><input type="checkbox" id="toggleMarketing"><span class="toggle-slider"></span></label></div><p class="cookie-cat-desc">Facebook és közösségi média sütik.</p></div></div><div class="cookie-modal-footer"><button class="btn-outline" id="cookieModalClose">Mégse</button><button class="btn-gold" id="cookieSaveSettings">Mentés</button></div></div></div>
+<script src="shared.js"></script>
+</body></html>

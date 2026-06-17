@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Élménypark – Avalon Lovasudvar</title>
+<meta name="description" content="Élménypark Abdán: óriási játszótér, elektromos quad, minigolf, állatsimogató, póni séta. Tökéletes program egész napos kikapcsolódáshoz.">
+<link rel="stylesheet" href="shared.css">
+<style>
+.park-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
+.park-card { background: var(--cream-bg); border: 0.5px solid var(--border); border-radius: 2px; overflow: hidden; }
+.park-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+.park-card-body { padding: 24px; }
+.park-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; margin-bottom: 8px; }
+.park-card-desc { font-size: 13px; color: var(--ink-mid); line-height: 1.7; }
+.park-card-price { margin-top: 12px; font-size: 13px; color: var(--bark); font-weight: 500; }
+.prices-section { background: var(--forest-dark); padding: 80px 64px; }
+.prices-section .section-label { color: rgba(201,185,122,0.7); }
+.prices-section .section-title { color: var(--cream); }
+.price-table { width: 100%; margin-top: 40px; border-collapse: collapse; }
+.price-table th { text-align: left; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,238,216,0.4); padding: 0 0 16px; border-bottom: 0.5px solid rgba(255,255,255,0.08); }
+.price-table td { padding: 16px 0; border-bottom: 0.5px solid rgba(255,255,255,0.06); font-size: 14px; color: rgba(245,238,216,0.75); }
+.price-table td:last-child { text-align: right; font-family: 'Playfair Display', serif; font-size: 18px; color: var(--gold); }
+.photo-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 4px; }
+.photo-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; cursor: pointer; transition: opacity 0.3s; }
+.photo-grid img:hover { opacity: 0.8; }
+.lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(10,12,8,0.95); align-items: center; justify-content: center; }
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; }
+.lightbox-close { position: absolute; top: 24px; right: 28px; color: rgba(245,238,216,0.6); font-size: 28px; cursor: pointer; background: none; border: none; }
+@media(max-width:768px){ .park-grid{grid-template-columns:1fr;} .prices-section{padding:60px 24px;} .photo-grid{grid-template-columns:repeat(2,1fr);} }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Avalon <em>Lovasudvar</em></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="rolunk.html">Rólunk</a></li>
+    <li><a href="lovasoktatas.html">Lovasoktatás</a></li>
+    <li><a href="elmenypark.html" class="active">Élménypark</a></li>
+    <li><a href="galeria.html">Galéria</a></li>
+    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+  </ul>
+  <a href="kapcsolat.html" class="nav-cta">Foglalj helyet</a>
+  <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://static.wixstatic.com/media/d55dbd_2a6c60692193482586a693ca35b5fba4~mv2.jpg/v1/fill/w_1920,h_800,al_c,q_85,enc_avif,quality_auto/d55dbd_2a6c60692193482586a693ca35b5fba4~mv2.jpg')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="page-hero-eyebrow">Kaland & természet</p>
+    <h1 class="page-hero-title">Élmény<em>park</em></h1>
+  </div>
+</div>
+
+<section style="background:var(--cream-bg);">
+  <p class="section-label">Programjaink</p>
+  <h2 class="section-title">Egy nap teli <em>élménnyel</em></h2>
+  <div class="divider"></div>
+  <p class="section-body" style="max-width:640px;">Várunk szeretettel minden kikapcsolódni vágyót Abda szívében az erdő mélyén! Óriási játszótérrel, minigolf pályával, próba lovaglással, elektromos quad pályával, állatsimogatókkal és rengeteg érdekes állattal.</p>
+  <div class="park-grid">
+    <div class="park-card">
+      <img src="https://static.wixstatic.com/media/d55dbd_9bb32b4622cb4b10ab8d13ca389de943~mv2.jpg/v1/fill/w_600,h_450,q_85,enc_avif,quality_auto/d55dbd_9bb32b4622cb4b10ab8d13ca389de943~mv2.jpg" alt="Állatsimogató" loading="lazy">
+      <div class="park-card-body"><h3 class="park-card-title">Állatsimogató</h3><p class="park-card-desc">Ismerkedj meg a lovardában élő állatokkal! Tökéletes program gyerekeknek és felnőtteknek egyaránt.</p></div>
+    </div>
+    <div class="park-card">
+      <img src="https://static.wixstatic.com/media/d55dbd_e1d204ce7e1d4d7caf8923b91c76a5c4~mv2.jpg/v1/fill/w_600,h_450,q_85,enc_avif,quality_auto/d55dbd_e1d204ce7e1d4d7caf8923b91c76a5c4~mv2.jpg" alt="Elektromos quad" loading="lazy">
+      <div class="park-card-body"><h3 class="park-card-title">Elektromos quad</h3><p class="park-card-desc">Izgalmas quadozás az erdei pályán. Gyerekek és felnőttek számára egyaránt biztonságos szórakozás.</p><p class="park-card-price">3 000 Ft / 15 perc</p></div>
+    </div>
+    <div class="park-card">
+      <img src="https://static.wixstatic.com/media/e4f497_b008727331bf490784fd00f842f99422f000.jpg/v1/fill/w_600,h_450,q_85,enc_avif,quality_auto/e4f497_b008727331bf490784fd00f842f99422f000.jpg" alt="Póni séta" loading="lazy">
+      <div class="park-card-body"><h3 class="park-card-title">Póni séta</h3><p class="park-card-desc">A legkisebbek kedvence! Biztonságos, kísért póni séta a lovarda körül, tapasztalt vezető segítségével.</p><p class="park-card-price">3 000 Ft / alkalom (~7-8 perc)</p></div>
+    </div>
+    <div class="park-card">
+      <img src="https://static.wixstatic.com/media/d55dbd_2358e9c2c1684d15a89c1562ce990e2e~mv2.jpg/v1/fill/w_600,h_450,q_85,enc_avif,quality_auto/d55dbd_2358e9c2c1684d15a89c1562ce990e2e~mv2.jpg" alt="Játszótér" loading="lazy">
+      <div class="park-card-body"><h3 class="park-card-title">Óriási játszótér</h3><p class="park-card-desc">Hatalmas szabadtéri játszótér a kicsiknek, ahol órákon át szórakozhatnak biztonságos környezetben.</p></div>
+    </div>
+    <div class="park-card">
+      <img src="https://static.wixstatic.com/media/d55dbd_25a9cc7d882b4087b298e003f6df2413~mv2.jpg/v1/fill/w_600,h_450,q_85,enc_avif,quality_auto/d55dbd_25a9cc7d882b4087b298e003f6df2413~mv2.jpg" alt="Minigolf" loading="lazy">
+      <div class="park-card-body"><h3 class="park-card-title">Minigolf pálya</h3><p class="park-card-desc">Szórakoztató minigolf pálya egész nap – tökéletes program a felnőtteknek és a nagyobb gyerekeknek.</p></div>
+    </div>
+    <div class="park-card">
+      <img src="https://static.wixstatic.com/media/d55dbd_8b9f51f5618840dab5616d1461a68e64~mv2.jpg/v1/fill/w_600,h_450,q_85,enc_avif,quality_auto/d55dbd_8b9f51f5618840dab5616d1461a68e64~mv2.jpg" alt="Büfé" loading="lazy">
+      <div class="park-card-body"><h3 class="park-card-title">Büfé a helyszínen</h3><p class="park-card-desc">A park területén büfé üzemel, hogy egész napos tartózkodás esetén se kelljen éhesen maradni.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="prices-section">
+  <p class="section-label">Belépők</p>
+  <h2 class="section-title">Átlátható <em>árjaink</em></h2>
+  <div class="divider" style="background:var(--gold);"></div>
+  <table class="price-table">
+    <thead><tr><th>Kategória</th><th>Megjegyzés</th><th style="text-align:right;">Ár</th></tr></thead>
+    <tbody>
+      <tr><td>0–1 éves</td><td style="color:rgba(245,238,216,0.4);">Belépő ingyenes</td><td>0 Ft</td></tr>
+      <tr><td>1–3 éves</td><td style="color:rgba(245,238,216,0.4);">Gyermek belépő</td><td>2 000 Ft</td></tr>
+      <tr><td>3 év felett</td><td style="color:rgba(245,238,216,0.4);">Felnőtt & gyermek</td><td>3 500 Ft</td></tr>
+      <tr><td>Börcsi / Abdai lakcím</td><td style="color:rgba(245,238,216,0.4);">Lakcímkártyával</td><td>2 000 Ft</td></tr>
+      <tr><td>Póni séta</td><td style="color:rgba(245,238,216,0.4);">~7-8 perc</td><td>3 000 Ft</td></tr>
+      <tr><td>Elektromos quad</td><td style="color:rgba(245,238,216,0.4);">15 perc</td><td>3 000 Ft</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:24px;font-size:12px;color:rgba(245,238,216,0.35);">⚠ Az Élménypark területére háziállatot behozni tilos! · OTP SZÉP kártya elfogadóhely.</p>
+</div>
+
+<section>
+  <p class="section-label">Galéria</p>
+  <h2 class="section-title">Az <em>élménypark</em> képekben</h2>
+  <div class="divider"></div>
+  <div class="photo-grid">
+    <img src="https://static.wixstatic.com/media/d55dbd_9c49d528bee64e818eee77556f91a9da~mv2.jpg/v1/fill/w_450,h_450,q_80,enc_avif,quality_auto/d55dbd_9c49d528bee64e818eee77556f91a9da~mv2.jpg" alt="" loading="lazy" onclick="openLb(this.src)">
+    <img src="https://static.wixstatic.com/media/d55dbd_647dd47ff9ee44d6b93e4d8692bf1cb8~mv2.jpg/v1/fill/w_450,h_450,q_80,enc_avif,quality_auto/d55dbd_647dd47ff9ee44d6b93e4d8692bf1cb8~mv2.jpg" alt="" loading="lazy" onclick="openLb(this.src)">
+    <img src="https://static.wixstatic.com/media/d55dbd_c53cda384764419aa82d7cb6a8c4efc1~mv2.jpg/v1/fill/w_450,h_450,q_80,enc_avif,quality_auto/d55dbd_c53cda384764419aa82d7cb6a8c4efc1~mv2.jpg" alt="" loading="lazy" onclick="openLb(this.src)">
+    <img src="https://static.wixstatic.com/media/d55dbd_e964d39fb695455aa0c706533fc474c9~mv2.jpg/v1/fill/w_450,h_450,q_80,enc_avif,quality_auto/d55dbd_e964d39fb695455aa0c706533fc474c9~mv2.jpg" alt="" loading="lazy" onclick="openLb(this.src)">
+    <img src="https://static.wixstatic.com/media/d55dbd_6fc3827fd3e44205adcfa4b00cce6b95~mv2.jpg/v1/fill/w_450,h_450,q_80,enc_avif,quality_auto/d55dbd_6fc3827fd3e44205adcfa4b00cce6b95~mv2.jpg" alt="" loading="lazy" onclick="openLb(this.src)">
+    <img src="https://static.wixstatic.com/media/d55dbd_c3809b82434e4d08a6d13f988e92f10e~mv2.jpg/v1/fill/w_450,h_450,q_80,enc_avif,quality_auto/d55dbd_c3809b82434e4d08a6d13f988e92f10e~mv2.jpg" alt="" loading="lazy" onclick="openLb(this.src)">
+    <img src="https://static.wixstatic.com/media/d55dbd_0d6333dfe28e402bb619bb591dca136f~mv2.jpg/v1/fill/w_450,h_450,q_80,enc_avif,quality_auto/d55dbd_0d6333dfe28e402bb619bb591dca136f~mv2.jpg" alt="" loading="lazy" onclick="openLb(this.src)">
+    <img src="https://static.wixstatic.com/media/d55dbd_aae454d586c6411896b47b74e9881e27~mv2.jpg/v1/fill/w_450,h_450,q_80,enc_avif,quality_auto/d55dbd_aae454d586c6411896b47b74e9881e27~mv2.jpg" alt="" loading="lazy" onclick="openLb(this.src)">
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><span class="footer-logo">Avalon Lovasudvar</span><span class="footer-tagline">Győrtől 7 km-re, Abdán, erdei környezetben.</span></div>
+    <div class="footer-col"><h4>Oldalak</h4><a href="rolunk.html">Rólunk</a><a href="lovasoktatas.html">Lovasoktatás</a><a href="elmenypark.html">Élménypark</a><a href="galeria.html">Galéria</a><a href="kapcsolat.html">Kapcsolat</a></div>
+    <div class="footer-col"><h4>Elérhetőség</h4><p>9151 Abda, Pagony 27.</p><a href="tel:+36303271278">+36 30 327 1278</a><a href="mailto:info@avalonlovasudvar.com">info@avalonlovasudvar.com</a></div>
+    <div class="footer-col"><h4>Közösség</h4><a href="https://www.facebook.com/avalonlovasudvar" target="_blank">Facebook</a><a href="https://www.instagram.com/avalonlovasudvar_elmenypark/" target="_blank">Instagram</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Avalon Lovasudvar – KLUGTEK Kft.</span>
+    <div class="footer-legal"><a href="adatvedelem.html">Adatvédelmi tájékoztató</a><a href="cookie.html">Cookie szabályzat</a></div>
+  </div>
+</footer>
+<div id="cookie-banner" class="hidden"><p class="cookie-text">Weboldalunk sütiket használ. <a href="cookie.html">Részletek</a></p><div class="cookie-btns"><button class="cookie-settings" id="cookieSettings">Beállítások</button><button class="cookie-decline" id="cookieDecline">Csak szükséges</button><button class="cookie-accept" id="cookieAccept">Elfogadom</button></div></div>
+<div id="cookie-modal"><div class="cookie-modal-box"><div class="cookie-modal-header"><h2>Cookie beállítások</h2></div><div class="cookie-modal-body"><div class="cookie-category"><div class="cookie-cat-header"><h3>Szükséges sütik</h3><label class="toggle-wrap"><input type="checkbox" checked disabled><span class="toggle-slider"></span></label></div><p class="cookie-cat-desc">Az oldal működéséhez elengedhetetlen sütik.</p></div><div class="cookie-category"><div class="cookie-cat-header"><h3>Analitikai sütik</h3><label class="toggle-wrap"><input type="checkbox" id="toggleAnalytics"><span class="toggle-slider"></span></label></div><p class="cookie-cat-desc">Google Analytics – anonim látogatottsági statisztika.</p></div><div class="cookie-category"><div class="cookie-cat-header"><h3>Marketing sütik</h3><label class="toggle-wrap"><input type="checkbox" id="toggleMarketing"><span class="toggle-slider"></span></label></div><p class="cookie-cat-desc">Facebook és közösségi média sütik.</p></div></div><div class="cookie-modal-footer"><button class="btn-outline" id="cookieModalClose">Mégse</button><button class="btn-gold" id="cookieSaveSettings">Mentés</button></div></div></div>
+<div class="lightbox" id="lightbox" onclick="closeLb()"><button class="lightbox-close">✕</button><img id="lbImg" src="" alt=""></div>
+<script src="shared.js"></script>
+<script>
+function openLb(s){document.getElementById('lbImg').src=s;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+function closeLb(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();});
+</script>
+</body></html>

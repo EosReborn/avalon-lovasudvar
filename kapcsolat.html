@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapcsolat – Avalon Lovasudvar</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.contact-info { display: flex; flex-direction: column; gap: 20px; }
+.ci { display: flex; gap: 16px; align-items: flex-start; }
+.ci-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--cream-bg); border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+.ci-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-light); margin-bottom: 4px; }
+.ci-value { font-size: 14px; color: var(--ink); line-height: 1.5; }
+.ci-value a { color: var(--ink); text-decoration: none; }
+.ci-value a:hover { color: var(--bark); }
+.map-wrap { margin-top: 32px; border-radius: 2px; overflow: hidden; border: 0.5px solid var(--border); }
+.map-wrap iframe { display: block; width: 100%; height: 300px; border: none; }
+.form-section { background: var(--cream-bg); padding: 4px 0 0; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-field { display: flex; flex-direction: column; gap: 8px; }
+.form-field.full { grid-column: span 2; }
+.form-field label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-light); }
+.form-field input, .form-field textarea, .form-field select { font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--ink); background: #fff; border: 0.5px solid var(--border); border-radius: 2px; padding: 12px 14px; outline: none; transition: border-color 0.2s; resize: vertical; }
+.form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--ink-light); }
+.form-field textarea { min-height: 140px; }
+.form-notice { font-size: 12px; color: var(--ink-light); line-height: 1.6; margin-top: 8px; }
+.form-notice a { color: var(--bark); text-decoration: none; }
+.success-msg { display: none; background: #EAF4E8; border: 0.5px solid #8CB87A; border-radius: 2px; padding: 16px 20px; font-size: 14px; color: #2A5A1A; margin-top: 16px; }
+@media(max-width:768px){ .contact-layout,.form-grid{grid-template-columns:1fr;gap:32px;} .form-field.full{grid-column:span 1;} }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Avalon <em>Lovasudvar</em></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="rolunk.html">Rólunk</a></li>
+    <li><a href="lovasoktatas.html">Lovasoktatás</a></li>
+    <li><a href="elmenypark.html">Élménypark</a></li>
+    <li><a href="galeria.html">Galéria</a></li>
+    <li><a href="kapcsolat.html" class="active">Kapcsolat</a></li>
+  </ul>
+  <a href="kapcsolat.html" class="nav-cta">Foglalj helyet</a>
+  <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</nav>
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://static.wixstatic.com/media/d55dbd_71d90cf20f3f49008eea84dd1d0947f3~mv2.jpg/v1/fill/w_1920,h_800,al_c,q_85,enc_avif,quality_auto/IMG_5722.jpg')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content"><p class="page-hero-eyebrow">Írj vagy hívj minket</p><h1 class="page-hero-title"><em>Kapcsolat</em></h1></div>
+</div>
+
+<section>
+  <div class="contact-layout">
+    <div>
+      <p class="section-label">Elérhetőségeink</p>
+      <h2 class="section-title">Hogyan <em>találsz</em> meg?</h2>
+      <div class="divider"></div>
+      <div class="contact-info">
+        <div class="ci"><div class="ci-icon">📞</div><div><p class="ci-label">Telefon</p><p class="ci-value"><a href="tel:+36303271278">+36 30 327 1278</a></p></div></div>
+        <div class="ci"><div class="ci-icon">✉</div><div><p class="ci-label">E-mail</p><p class="ci-value"><a href="mailto:info@avalonlovasudvar.com">info@avalonlovasudvar.com</a></p></div></div>
+        <div class="ci"><div class="ci-icon">📍</div><div><p class="ci-label">Cím</p><p class="ci-value">9151 Abda, Pagony 27.<br><span style="color:var(--ink-light);font-size:13px;">Győrtől mindössze 7 km-re</span></p></div></div>
+        <div class="ci"><div class="ci-icon">🏢</div><div><p class="ci-label">Cégnév</p><p class="ci-value">KLUGTEK Kft.<br><span style="color:var(--ink-light);font-size:13px;">Adószám: 23884209-2-08</span></p></div></div>
+        <div class="ci"><div class="ci-icon">f</div><div><p class="ci-label">Facebook</p><p class="ci-value"><a href="https://www.facebook.com/avalonlovasudvar" target="_blank">avalonlovasudvar</a></p></div></div>
+        <div class="ci"><div class="ci-icon">◎</div><div><p class="ci-label">Instagram</p><p class="ci-value"><a href="https://www.instagram.com/avalonlovasudvar_elmenypark/" target="_blank">@avalonlovasudvar_elmenypark</a></p></div></div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.5!2d17.7250!3d47.7180!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476bbfa3a3a3a3a3%3A0x0!2sAbda%2C+Pagony+27%2C+9151!5e0!3m2!1shu!2shu!4v1" allowfullscreen loading="lazy" title="Avalon Lovasudvar térképen"></iframe>
+      </div>
+    </div>
+    <div>
+      <p class="section-label">Üzenet</p>
+      <h2 class="section-title">Írj <em>nekünk</em>!</h2>
+      <div class="divider"></div>
+      <form id="contactForm" onsubmit="handleSubmit(event)" novalidate>
+        <div class="form-grid">
+          <div class="form-field"><label for="name">Neved *</label><input type="text" id="name" name="name" placeholder="Pl. Kovács Anna" required></div>
+          <div class="form-field"><label for="email">E-mail *</label><input type="email" id="email" name="email" placeholder="email@example.com" required></div>
+          <div class="form-field"><label for="phone">Telefonszám</label><input type="tel" id="phone" name="phone" placeholder="+36 30 ..."></div>
+          <div class="form-field"><label for="subject">Téma</label>
+            <select id="subject" name="subject">
+              <option value="">Válassz témát...</option>
+              <option>Lovasoktatás – időpontfoglalás</option>
+              <option>Születésnapi program</option>
+              <option>Élménypark látogatás</option>
+              <option>Bértartás</option>
+              <option>Egyéb érdeklődés</option>
+            </select>
+          </div>
+          <div class="form-field full"><label for="message">Üzenet *</label><textarea id="message" name="message" placeholder="Írd ide üzenetedet..." required></textarea></div>
+          <div class="form-field full">
+            <label style="display:flex;gap:10px;align-items:flex-start;text-transform:none;letter-spacing:0;cursor:pointer;">
+              <input type="checkbox" id="gdpr" required style="margin-top:3px;flex-shrink:0;">
+              <span style="font-size:13px;color:var(--ink-mid);">Elfogadom az <a href="adatvedelem.html" style="color:var(--bark);">adatvédelmi tájékoztatót</a> és hozzájárulok adataim kezeléséhez a kapcsolatfelvétel céljából. *</span>
+            </label>
+          </div>
+        </div>
+        <button type="submit" class="btn-gold" style="margin-top:20px;width:100%;text-align:center;">Üzenet küldése →</button>
+        <div class="success-msg" id="successMsg">✓ Üzeneted megérkezett! Hamarosan felvesszük veled a kapcsolatot.</div>
+        <p class="form-notice" style="margin-top:16px;">* Kötelező mezők. Az adatokat kizárólag a kapcsolatfelvétel céljából kezeljük, harmadik félnek nem adjuk át. Részletek: <a href="adatvedelem.html">Adatvédelmi tájékoztató</a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><span class="footer-logo">Avalon Lovasudvar</span><span class="footer-tagline">Győrtől 7 km-re, Abdán, erdei környezetben.</span></div>
+    <div class="footer-col"><h4>Oldalak</h4><a href="rolunk.html">Rólunk</a><a href="lovasoktatas.html">Lovasoktatás</a><a href="elmenypark.html">Élménypark</a><a href="galeria.html">Galéria</a><a href="kapcsolat.html">Kapcsolat</a></div>
+    <div class="footer-col"><h4>Elérhetőség</h4><p>9151 Abda, Pagony 27.</p><a href="tel:+36303271278">+36 30 327 1278</a><a href="mailto:info@avalonlovasudvar.com">info@avalonlovasudvar.com</a></div>
+    <div class="footer-col"><h4>Közösség</h4><a href="https://www.facebook.com/avalonlovasudvar" target="_blank">Facebook</a><a href="https://www.instagram.com/avalonlovasudvar_elmenypark/" target="_blank">Instagram</a></div>
+  </div>
+  <div class="footer-bottom"><span class="footer-copy">© 2025 Avalon Lovasudvar – KLUGTEK Kft.</span><div class="footer-legal"><a href="adatvedelem.html">Adatvédelmi tájékoztató</a><a href="cookie.html">Cookie szabályzat</a></div></div>
+</footer>
+<div id="cookie-banner" class="hidden"><p class="cookie-text">Weboldalunk sütiket használ. <a href="cookie.html">Részletek</a></p><div class="cookie-btns"><button class="cookie-settings" id="cookieSettings">Beállítások</button><button class="cookie-decline" id="cookieDecline">Csak szükséges</button><button class="cookie-accept" id="cookieAccept">Elfogadom</button></div></div>
+<div id="cookie-modal"><div class="cookie-modal-box"><div class="cookie-modal-header"><h2>Cookie beállítások</h2></div><div class="cookie-modal-body"><div class="cookie-category"><div class="cookie-cat-header"><h3>Szükséges sütik</h3><label class="toggle-wrap"><input type="checkbox" checked disabled><span class="toggle-slider"></span></label></div><p class="cookie-cat-desc">Az oldal működéséhez elengedhetetlen sütik.</p></div><div class="cookie-category"><div class="cookie-cat-header"><h3>Analitikai sütik</h3><label class="toggle-wrap"><input type="checkbox" id="toggleAnalytics"><span class="toggle-slider"></span></label></div><p class="cookie-cat-desc">Google Analytics – anonim statisztika.</p></div><div class="cookie-category"><div class="cookie-cat-header"><h3>Marketing sütik</h3><label class="toggle-wrap"><input type="checkbox" id="toggleMarketing"><span class="toggle-slider"></span></label></div><p class="cookie-cat-desc">Facebook és közösségi média sütik.</p></div></div><div class="cookie-modal-footer"><button class="btn-outline" id="cookieModalClose">Mégse</button><button class="btn-gold" id="cookieSaveSettings">Mentés</button></div></div></div>
+<script src="shared.js"></script>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('contactForm');
+  if (!form.checkValidity()) { form.reportValidity(); return; }
+  document.getElementById('successMsg').style.display = 'block';
+  form.reset();
+  setTimeout(() => { document.getElementById('successMsg').style.display = 'none'; }, 6000);
+}
+</script>
+</body></html>

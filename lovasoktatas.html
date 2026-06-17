@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lovasoktatás – Avalon Lovasudvar</title>
+<meta name="description" content="Lovasoktatás kicsiktől a haladókig, póni lovagláson át a versenyző szintig. Képzett oktatók, gyönyörű erdei lovarda Abdán.">
+<link rel="stylesheet" href="shared.css">
+<style>
+.oktatas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.levels { margin-top: 48px; }
+.level-item { display: grid; grid-template-columns: 48px 1fr; gap: 20px; padding: 28px 0; border-bottom: 0.5px solid var(--border); align-items: start; }
+.level-item:first-child { border-top: 0.5px solid var(--border); }
+.level-num { font-family: 'Playfair Display', serif; font-size: 22px; color: var(--gold); font-weight: 400; padding-top: 2px; }
+.level-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; margin-bottom: 8px; }
+.level-desc { font-size: 14px; color: var(--ink-mid); line-height: 1.7; }
+.cta-block { background: var(--forest-dark); padding: 80px 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.cta-title { font-family: 'Playfair Display', serif; font-size: 30px; color: var(--cream); font-weight: 400; margin-bottom: 16px; }
+.cta-desc { font-size: 14px; color: rgba(245,238,216,0.55); line-height: 1.7; }
+.cta-img img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+@media(max-width:768px){ .oktatas-grid,.cta-block{grid-template-columns:1fr;gap:40px;} .cta-block{padding:60px 24px;} }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Avalon <em>Lovasudvar</em></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="rolunk.html">Rólunk</a></li>
+    <li><a href="lovasoktatas.html" class="active">Lovasoktatás</a></li>
+    <li><a href="elmenypark.html">Élménypark</a></li>
+    <li><a href="galeria.html">Galéria</a></li>
+    <li><a href="kapcsolat.html">Kapcsolat</a></li>
+  </ul>
+  <a href="kapcsolat.html" class="nav-cta">Foglalj helyet</a>
+  <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://static.wixstatic.com/media/d55dbd_0bfac918e7414f518b2e58436f6933c7~mv2.jpg/v1/fill/w_1920,h_800,al_c,q_85,enc_avif,quality_auto/d55dbd_0bfac918e7414f518b2e58436f6933c7~mv2.jpg')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="page-hero-eyebrow">Oktatás & fejlődés</p>
+    <h1 class="page-hero-title">Lovaso<em>ktatás</em></h1>
+  </div>
+</div>
+
+<section>
+  <div class="oktatas-grid">
+    <div>
+      <p class="section-label">Oktatási programunk</p>
+      <h2 class="section-title">Minden szintnek <em>megvan</em> a helye</h2>
+      <div class="divider"></div>
+      <p class="section-body" style="margin-bottom:20px;">Lovardánk várja kicsiktől a nagyokig, kezdőktől a haladókig és a versenyző szinten lévő lovasokat egyaránt! Lovardánkban a gyakorlati oktatás mellett az elméleti oktatásra is nagy figyelmet fordítunk.</p>
+      <p class="section-body">A lovak hozzásegítenek a nyugodtabb lelki állapothoz, ami a koncentráció, koordináció és a memória javulását eredményezi! Képzett oktatói és edzői csapat biztosítja a színvonalas oktatást.</p>
+      <div class="levels">
+        <div class="level-item">
+          <span class="level-num">01</span>
+          <div><h3 class="level-title">Póni & voltizs lovaglás</h3><p class="level-desc">A legkisebbek számára – egyensúly és figyelemfejlesztő gyakorlatok, szocializáció és kommunikáció fejlesztése játékos formában.</p></div>
+        </div>
+        <div class="level-item">
+          <span class="level-num">02</span>
+          <div><h3 class="level-title">Kezdő lovasoktatás</h3><p class="level-desc">Az alapok elsajátítása – helyes ülés, irányítás, alapjárások. Biztonságos, türelmes oktatás lépésről lépésre.</p></div>
+        </div>
+        <div class="level-item">
+          <span class="level-num">03</span>
+          <div><h3 class="level-title">Haladó oktatás</h3><p class="level-desc">Díjlovaglás és díjugratás alapoktól a haladó szintig. Rendszeres edzések, versenyre való felkészítés.</p></div>
+        </div>
+        <div class="level-item">
+          <span class="level-num">04</span>
+          <div><h3 class="level-title">Versenyző szint</h3><p class="level-desc">Haladó lovasaink elsajátíthatják a díjlovaglást és díjugratást az alapoktól egészen a versenyző szintig.</p></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <img src="https://static.wixstatic.com/media/d55dbd_db9d73c12f17450db0a316932bb3bef4~mv2.jpg/v1/fill/w_900,h_700,al_c,q_85,enc_avif,quality_auto/IMG_5481.jpg" alt="Lovasoktatás" loading="lazy" style="width:100%;border-radius:2px;margin-bottom:16px;">
+      <img src="https://static.wixstatic.com/media/d55dbd_0bfac918e7414f518b2e58436f6933c7~mv2.jpg/v1/fill/w_900,h_500,al_c,q_85,enc_avif,quality_auto/d55dbd_0bfac918e7414f518b2e58436f6933c7~mv2.jpg" alt="Lovas" loading="lazy" style="width:100%;border-radius:2px;">
+    </div>
+  </div>
+</section>
+
+<div class="cta-block">
+  <div>
+    <h2 class="cta-title">Foglald le az első órádat!</h2>
+    <p class="cta-desc">Akár kezdő, akár haladó vagy – csapatunk szívesen vár. Vedd fel velünk a kapcsolatot és beszéljük meg az igényeidet!</p>
+    <div style="margin-top:28px;display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="kapcsolat.html" class="btn-gold">Időpontot kérek →</a>
+      <a href="tel:+36303271278" class="btn-outline" style="color:var(--cream);border-color:rgba(245,238,216,0.3);">+36 30 327 1278</a>
+    </div>
+  </div>
+  <div class="cta-img"><img src="https://static.wixstatic.com/media/d55dbd_71d90cf20f3f49008eea84dd1d0947f3~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_avif,quality_auto/IMG_5722.jpg" alt="Lovak" loading="lazy"></div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><span class="footer-logo">Avalon Lovasudvar</span><span class="footer-tagline">Győrtől 7 km-re, Abdán, erdei környezetben.</span></div>
+    <div class="footer-col"><h4>Oldalak</h4><a href="rolunk.html">Rólunk</a><a href="lovasoktatas.html">Lovasoktatás</a><a href="elmenypark.html">Élménypark</a><a href="galeria.html">Galéria</a><a href="kapcsolat.html">Kapcsolat</a></div>
+    <div class="footer-col"><h4>Elérhetőség</h4><p>9151 Abda, Pagony 27.</p><a href="tel:+36303271278">+36 30 327 1278</a><a href="mailto:info@avalonlovasudvar.com">info@avalonlovasudvar.com</a></div>
+    <div class="footer-col"><h4>Közösség</h4><a href="https://www.facebook.com/avalonlovasudvar" target="_blank">Facebook</a><a href="https://www.instagram.com/avalonlovasudvar_elmenypark/" target="_blank">Instagram</a></div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Avalon Lovasudvar – KLUGTEK Kft.</span>
+    <div class="footer-legal"><a href="adatvedelem.html">Adatvédelmi tájékoztató</a><a href="cookie.html">Cookie szabályzat</a></div>
+  </div>
+</footer>
+<div id="cookie-banner" class="hidden"><p class="cookie-text">Weboldalunk sütiket használ. <a href="cookie.html">Részletek</a></p><div class="cookie-btns"><button class="cookie-settings" id="cookieSettings">Beállítások</button><button class="cookie-decline" id="cookieDecline">Csak szükséges</button><button class="cookie-accept" id="cookieAccept">Elfogadom</button></div></div>
+<div id="cookie-modal"><div class="cookie-modal-box"><div class="cookie-modal-header"><h2>Cookie beállítások</h2></div><div class="cookie-modal-body"><div class="cookie-category"><div class="cookie-cat-header"><h3>Szükséges sütik</h3><label class="toggle-wrap"><input type="checkbox" checked disabled><span class="toggle-slider"></span></label></div><p class="cookie-cat-desc">Az oldal működéséhez elengedhetetlen sütik.</p></div><div class="cookie-category"><div class="cookie-cat-header"><h3>Analitikai sütik</h3><label class="toggle-wrap"><input type="checkbox" id="toggleAnalytics"><span class="toggle-slider"></span></label></div><p class="cookie-cat-desc">Google Analytics – anonim látogatottsági statisztika.</p></div><div class="cookie-category"><div class="cookie-cat-header"><h3>Marketing sütik</h3><label class="toggle-wrap"><input type="checkbox" id="toggleMarketing"><span class="toggle-slider"></span></label></div><p class="cookie-cat-desc">Facebook és közösségi média sütik.</p></div></div><div class="cookie-modal-footer"><button class="btn-outline" id="cookieModalClose">Mégse</button><button class="btn-gold" id="cookieSaveSettings">Mentés</button></div></div></div>
+<script src="shared.js"></script>
+</body></html>

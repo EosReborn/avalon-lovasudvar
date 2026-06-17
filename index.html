@@ -3,424 +3,139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Avalon Lovasudvar & Élménypark</title>
-<meta name="description" content="Győrtől 7 km-re Abdán, gyönyörű erdei környezetben várja Önt az Avalon Lovasudvar és Élménypark.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Avalon Lovasudvar & Élménypark – Abda, Győr közelében</title>
+<meta name="description" content="Győrtől 7 km-re Abdán, erdei környezetben lovasoktatás, születésnapok, élménypark. OTP SZÉP kártya elfogadóhely.">
+<link rel="stylesheet" href="shared.css">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --ink: #2C2A1E;
-  --ink-mid: #5A5040;
-  --ink-light: #9A8C6E;
-  --gold: #C9B97A;
-  --gold-light: #E8D9A0;
-  --cream: #F5EED8;
-  --cream-bg: #FDFAF4;
-  --forest-dark: #2C3422;
-  --forest: #3E4A2A;
-  --forest-mid: #5A6B34;
-  --bark: #4A3B1F;
-  --border: #D6CFBC;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  color: var(--ink);
-  background: #fff;
-  overflow-x: hidden;
-}
-
-/* ── NAV ── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px; height: 68px;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(8px);
-  border-bottom: 0.5px solid var(--border);
-  transition: background 0.3s;
-}
-
-.nav-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px; font-weight: 600;
-  color: var(--ink); text-decoration: none;
-  letter-spacing: 0.02em;
-}
-.nav-logo em { font-style: italic; font-weight: 400; color: #7A6A42; }
-
-.nav-links {
-  display: flex; gap: 32px; list-style: none;
-}
-.nav-links a {
-  font-size: 12px; font-weight: 400; color: var(--ink-mid);
-  text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--ink); }
-
-.nav-cta {
-  background: var(--bark); color: var(--cream);
-  font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
-  text-transform: uppercase; padding: 10px 20px;
-  border: none; border-radius: 2px; cursor: pointer;
-  text-decoration: none; transition: background 0.2s;
-}
-.nav-cta:hover { background: #3a2e18; }
-
-.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-.nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); }
-
 /* ── HERO ── */
-.hero {
-  position: relative; height: 100vh; min-height: 600px;
-  display: flex; align-items: flex-end;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute; inset: 0;
-  background-image: url('https://static.wixstatic.com/media/d55dbd_387e15f545924a46989c31b4b29434a9~mv2.jpg/v1/fill/w_1920,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d55dbd_387e15f545924a46989c31b4b29434a9~mv2.jpg');
-  background-size: cover; background-position: center;
-  transform: scale(1.05);
-  transition: transform 8s ease;
-}
-.hero-bg.loaded { transform: scale(1); }
-
-.hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(20,22,14,0.2) 0%,
-    rgba(20,22,14,0.1) 40%,
-    rgba(20,22,14,0.75) 80%,
-    rgba(15,17,10,0.92) 100%
-  );
-}
-
-.hero-content {
-  position: relative; z-index: 2;
-  padding: 0 64px 72px;
-  max-width: 700px;
-}
-
-.hero-eyebrow {
-  font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 16px;
-}
-
-.hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 5vw, 58px);
-  line-height: 1.08; font-weight: 400;
-  color: var(--cream); margin-bottom: 20px;
-}
+.hero { position: relative; height: 100vh; min-height: 600px; display: flex; align-items: flex-end; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background-image: url('https://static.wixstatic.com/media/d55dbd_387e15f545924a46989c31b4b29434a9~mv2.jpg/v1/fill/w_1920,h_1280,al_c,q_85,enc_avif,quality_auto/d55dbd_387e15f545924a46989c31b4b29434a9~mv2.jpg'); background-size: cover; background-position: center; transition: transform 8s ease; }
+.hero-bg.loaded { transform: scale(1.04); }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,22,14,0.15) 0%, rgba(20,22,14,0.08) 40%, rgba(20,22,14,0.75) 80%, rgba(15,17,10,0.92) 100%); }
+.hero-content { position: relative; z-index: 2; padding: 0 64px 80px; max-width: 680px; }
+.hero-eyebrow { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(38px, 5.5vw, 62px); line-height: 1.06; font-weight: 400; color: var(--cream); margin-bottom: 20px; }
 .hero-title em { font-style: italic; color: var(--gold); }
-
-.hero-sub {
-  font-size: 15px; line-height: 1.7;
-  color: rgba(245,238,216,0.72);
-  max-width: 440px; margin-bottom: 36px;
-}
-
+.hero-sub { font-size: 15px; line-height: 1.75; color: rgba(245,238,216,0.7); max-width: 440px; margin-bottom: 36px; }
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-badge { position: absolute; top: 88px; right: 48px; z-index: 3; background: rgba(20,22,14,0.5); border: 0.5px solid rgba(201,185,122,0.45); color: var(--gold); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 16px; border-radius: 2px; backdrop-filter: blur(6px); }
 
-.btn-gold {
-  background: var(--gold); color: var(--ink);
-  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
-  text-transform: uppercase; padding: 14px 28px;
-  border: none; border-radius: 2px; cursor: pointer;
-  text-decoration: none; transition: background 0.2s;
-}
-.btn-gold:hover { background: var(--gold-light); }
-
-.btn-outline {
-  background: transparent; color: var(--cream);
-  font-size: 11px; font-weight: 400; letter-spacing: 0.1em;
-  text-transform: uppercase; padding: 14px 28px;
-  border: 1px solid rgba(245,238,216,0.35); border-radius: 2px;
-  cursor: pointer; text-decoration: none; transition: border-color 0.2s;
-}
-.btn-outline:hover { border-color: rgba(245,238,216,0.7); }
-
-.hero-badge {
-  position: absolute; top: 88px; right: 48px; z-index: 3;
-  background: rgba(20,22,14,0.5); border: 0.5px solid rgba(201,185,122,0.45);
-  color: var(--gold); font-size: 10px; letter-spacing: 0.12em;
-  text-transform: uppercase; padding: 10px 16px; border-radius: 2px;
-  backdrop-filter: blur(6px);
-}
-
-/* ── INFO STRIP ── */
-.strip {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  background: var(--forest-dark);
-}
-.strip-item {
-  padding: 20px 24px;
-  border-right: 0.5px solid rgba(255,255,255,0.07);
-  display: flex; align-items: center; gap: 12px;
-}
+/* ── STRIP ── */
+.strip { display: grid; grid-template-columns: repeat(4,1fr); background: var(--forest-dark); }
+.strip-item { padding: 20px 24px; border-right: 0.5px solid rgba(255,255,255,0.07); display: flex; align-items: center; gap: 12px; }
 .strip-item:last-child { border-right: none; }
 .strip-icon { font-size: 22px; flex-shrink: 0; }
 .strip-label strong { display: block; font-size: 13px; font-weight: 500; color: var(--cream); }
 .strip-label span { font-size: 11px; color: rgba(245,238,216,0.5); }
 
-/* ── SECTION BASE ── */
-section { padding: 96px 64px; }
-.section-label {
-  font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--ink-light); margin-bottom: 10px;
-}
-.section-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(26px, 3vw, 36px); font-weight: 400;
-  color: var(--ink); line-height: 1.2; margin-bottom: 20px;
-}
-.section-title em { font-style: italic; color: #7A6A42; }
-.divider { width: 32px; height: 1px; background: var(--gold); margin-bottom: 24px; }
-.section-body { font-size: 15px; color: var(--ink-mid); line-height: 1.8; }
-
 /* ── SERVICES ── */
 .services { background: var(--cream-bg); }
-.services-intro { max-width: 600px; margin-bottom: 64px; }
-
-.services-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-}
-
-.service-card {
-  position: relative; border-radius: 2px; overflow: hidden;
-  aspect-ratio: 3/4; display: flex; flex-direction: column;
-  justify-content: flex-end; text-decoration: none;
-  transition: transform 0.4s ease;
-}
+.services-intro { max-width: 600px; margin-bottom: 56px; }
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.service-card { position: relative; border-radius: 2px; overflow: hidden; aspect-ratio: 3/4; display: flex; flex-direction: column; justify-content: flex-end; text-decoration: none; transition: transform 0.4s ease; }
 .service-card:hover { transform: translateY(-4px); }
-.service-card:hover .service-card-img { transform: scale(1.04); }
-
-.service-card-img {
-  position: absolute; inset: 0;
-  background-size: cover; background-position: center;
-  transition: transform 0.6s ease;
-}
-.service-card-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(transparent 30%, rgba(15,17,10,0.88) 100%);
-}
-.service-card-body {
-  position: relative; z-index: 2; padding: 28px 24px;
-}
-.service-card-tag {
-  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 8px;
-}
-.service-card-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px; font-weight: 400; color: var(--cream);
-  margin-bottom: 10px; line-height: 1.2;
-}
-.service-card-arrow {
-  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
-  color: rgba(245,238,216,0.5);
-}
+.service-card:hover .sc-img { transform: scale(1.05); }
+.sc-img { position: absolute; inset: 0; background-size: cover; background-position: center; transition: transform 0.6s ease; }
+.sc-overlay { position: absolute; inset: 0; background: linear-gradient(transparent 25%, rgba(15,17,10,0.88) 100%); }
+.sc-body { position: relative; z-index: 2; padding: 28px 24px; }
+.sc-tag { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.sc-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 400; color: var(--cream); margin-bottom: 10px; line-height: 1.2; }
+.sc-arrow { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,238,216,0.5); }
 
 /* ── ABOUT ── */
-.about {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 0; padding: 0; background: #F0EBE0;
-}
-.about-image {
-  position: relative; min-height: 560px; overflow: hidden;
-}
-.about-image img {
-  position: absolute; inset: 0; width: 100%; height: 100%;
-  object-fit: cover; transition: transform 6s ease;
-}
+.about { display: grid; grid-template-columns: 1fr 1fr; background: #F0EBE0; }
+.about-image { position: relative; min-height: 520px; overflow: hidden; }
+.about-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 6s ease; }
 .about-image:hover img { transform: scale(1.03); }
-
-.about-text {
-  padding: 80px 64px; display: flex; flex-direction: column; justify-content: center;
-}
-.about-body { font-size: 15px; color: var(--ink-mid); line-height: 1.85; margin-bottom: 36px; }
-
-.stats { display: flex; gap: 40px; padding-top: 32px; border-top: 0.5px solid var(--border); }
-.stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 30px; color: var(--bark); font-weight: 400; display: block;
-}
-.stat-lbl {
-  font-size: 10px; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.1em;
-}
+.about-text { padding: 80px 64px; display: flex; flex-direction: column; justify-content: center; }
+.about-body { font-size: 15px; color: var(--ink-mid); line-height: 1.85; margin-bottom: 16px; }
+.stats { display: flex; gap: 40px; padding-top: 28px; border-top: 0.5px solid var(--border); margin-top: 20px; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--bark); font-weight: 400; display: block; }
+.stat-lbl { font-size: 10px; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.1em; }
 
 /* ── GALLERY ── */
 .gallery { background: var(--ink); padding: 96px 64px; }
 .gallery .section-label { color: rgba(201,185,122,0.7); }
 .gallery .section-title { color: var(--cream); }
-.gallery .divider { background: var(--gold); }
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto;
-  gap: 4px; margin-top: 48px;
-}
-
-.gallery-item {
-  overflow: hidden; cursor: pointer; position: relative;
-  background: #1a1c12;
-}
+.gallery-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 4px; margin-top: 48px; }
+.gallery-item { overflow: hidden; cursor: pointer; background: #1a1c12; }
 .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
-.gallery-item img {
-  width: 100%; height: 100%; object-fit: cover;
-  aspect-ratio: 1;
-  transition: transform 0.5s ease, opacity 0.3s;
-  display: block;
-}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 1; transition: transform 0.5s ease, opacity 0.3s; display: block; }
 .gallery-item:first-child img { aspect-ratio: auto; height: 100%; }
 .gallery-item:hover img { transform: scale(1.05); opacity: 0.85; }
 
 /* ── PRICES ── */
 .prices { background: var(--cream-bg); }
 .prices-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 48px; }
-.price-card {
-  background: #fff; border: 0.5px solid var(--border);
-  border-radius: 2px; padding: 36px 28px;
-}
+.price-card { background: #fff; border: 0.5px solid var(--border); border-radius: 2px; padding: 36px 28px; }
 .price-card.featured { background: var(--forest-dark); border-color: transparent; }
-.price-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; margin-bottom: 8px; }
+.price-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 400; margin-bottom: 6px; color: var(--ink); }
 .price-card.featured .price-title { color: var(--cream); }
-.price-desc { font-size: 13px; color: var(--ink-light); line-height: 1.6; margin-bottom: 24px; }
-.price-card.featured .price-desc { color: rgba(245,238,216,0.55); }
-.price-amount { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--bark); margin-bottom: 4px; }
+.price-desc { font-size: 13px; color: var(--ink-light); line-height: 1.6; margin-bottom: 20px; }
+.price-card.featured .price-desc { color: rgba(245,238,216,0.5); }
+.price-amount { font-family: 'Playfair Display', serif; font-size: 32px; color: var(--bark); }
 .price-card.featured .price-amount { color: var(--gold); }
-.price-unit { font-size: 11px; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.08em; }
-.price-card.featured .price-unit { color: rgba(245,238,216,0.4); }
+.price-unit { font-size: 11px; color: var(--ink-light); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+.price-card.featured .price-unit { color: rgba(245,238,216,0.35); }
 .price-list { list-style: none; margin-top: 24px; border-top: 0.5px solid var(--border); padding-top: 20px; }
-.price-card.featured .price-list { border-color: rgba(255,255,255,0.1); }
-.price-list li {
-  font-size: 13px; color: var(--ink-mid); padding: 6px 0;
-  display: flex; align-items: center; gap: 8px;
-}
-.price-card.featured .price-list li { color: rgba(245,238,216,0.65); }
+.price-card.featured .price-list { border-color: rgba(255,255,255,0.08); }
+.price-list li { font-size: 13px; color: var(--ink-mid); padding: 5px 0; display: flex; align-items: center; gap: 8px; }
+.price-card.featured .price-list li { color: rgba(245,238,216,0.6); }
 .price-list li::before { content: '—'; color: var(--gold); font-size: 10px; flex-shrink: 0; }
 
 /* ── CONTACT ── */
-.contact {
-  background: var(--forest-dark);
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; padding: 96px 64px; align-items: center;
-}
+.contact { background: var(--forest-dark); display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding: 96px 64px; align-items: start; }
 .contact .section-label { color: rgba(201,185,122,0.65); }
 .contact .section-title { color: var(--cream); }
-.contact .divider { background: var(--gold); }
-.contact-sub { font-size: 14px; color: rgba(245,238,216,0.55); line-height: 1.7; }
-
-.contact-items { display: flex; flex-direction: column; gap: 20px; }
-.contact-item {
-  display: flex; align-items: center; gap: 16px;
-  font-size: 14px; color: rgba(245,238,216,0.75);
-  text-decoration: none;
-}
+.contact-sub { font-size: 14px; color: rgba(245,238,216,0.5); line-height: 1.7; margin-top: 8px; }
+.contact-items { display: flex; flex-direction: column; gap: 18px; }
+.contact-item { display: flex; align-items: center; gap: 16px; font-size: 14px; color: rgba(245,238,216,0.75); text-decoration: none; transition: color 0.2s; }
 .contact-item:hover { color: var(--gold); }
-.contact-icon {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: rgba(255,255,255,0.06);
-  border: 0.5px solid rgba(255,255,255,0.1);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px; flex-shrink: 0;
-  transition: background 0.2s, border-color 0.2s;
-}
+.contact-icon { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.05); border: 0.5px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; transition: background 0.2s, border-color 0.2s; }
 .contact-item:hover .contact-icon { background: rgba(201,185,122,0.12); border-color: var(--gold); }
-
-.contact-map {
-  margin-top: 32px; border-radius: 2px; overflow: hidden;
-  border: 0.5px solid rgba(255,255,255,0.08);
-}
-.contact-map iframe { display: block; width: 100%; height: 260px; border: none; filter: grayscale(30%) invert(5%); }
-
-/* ── FOOTER ── */
-footer {
-  background: #171910;
-  padding: 32px 64px;
-  display: flex; justify-content: space-between; align-items: center;
-  flex-wrap: wrap; gap: 16px;
-}
-.footer-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 16px; color: rgba(245,238,216,0.5); font-style: italic;
-}
-.footer-links { display: flex; gap: 24px; }
-.footer-links a { font-size: 11px; color: rgba(245,238,216,0.3); text-decoration: none; letter-spacing: 0.06em; }
-.footer-links a:hover { color: rgba(245,238,216,0.6); }
-.footer-copy { font-size: 11px; color: rgba(245,238,216,0.2); }
+.contact-notice { margin-top: 20px; font-size: 12px; color: rgba(245,238,216,0.3); line-height: 1.5; }
 
 /* ── LIGHTBOX ── */
-.lightbox {
-  display: none; position: fixed; inset: 0; z-index: 999;
-  background: rgba(10,12,8,0.95); align-items: center; justify-content: center;
-}
+.lightbox { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(10,12,8,0.95); align-items: center; justify-content: center; }
 .lightbox.open { display: flex; }
-.lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; border-radius: 2px; }
-.lightbox-close {
-  position: absolute; top: 24px; right: 28px;
-  color: rgba(245,238,216,0.6); font-size: 28px; cursor: pointer;
-  background: none; border: none; line-height: 1;
-}
-.lightbox-close:hover { color: var(--cream); }
+.lightbox img { max-width: 90vw; max-height: 88vh; object-fit: contain; }
+.lightbox-close { position: absolute; top: 24px; right: 28px; color: rgba(245,238,216,0.6); font-size: 28px; cursor: pointer; background: none; border: none; line-height: 1; }
 
 /* ── MOBILE ── */
 @media (max-width: 768px) {
-  nav { padding: 0 24px; }
-  .nav-links, .nav-cta { display: none; }
-  .nav-toggle { display: flex; }
-  .nav-links.open {
-    display: flex; flex-direction: column;
-    position: fixed; top: 68px; left: 0; right: 0;
-    background: rgba(255,255,255,0.98); padding: 24px;
-    border-bottom: 0.5px solid var(--border); gap: 20px;
-  }
-  .nav-links.open + .nav-cta { display: block; }
-
-  section { padding: 64px 24px; }
   .hero-content { padding: 0 24px 56px; }
   .hero-badge { display: none; }
   .strip { grid-template-columns: repeat(2,1fr); }
-  .services-grid { grid-template-columns: 1fr; }
+  .services-grid, .prices-grid { grid-template-columns: 1fr; }
   .about { grid-template-columns: 1fr; }
-  .about-image { min-height: 320px; }
+  .about-image { min-height: 300px; }
   .about-text { padding: 48px 24px; }
   .gallery-grid { grid-template-columns: repeat(2,1fr); }
   .gallery-item:first-child { grid-column: span 2; }
-  .prices-grid { grid-template-columns: 1fr; }
-  .contact { grid-template-columns: 1fr; padding: 64px 24px; gap: 48px; }
-  footer { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
+  .contact { grid-template-columns: 1fr; padding: 60px 24px; gap: 48px; }
+  .gallery { padding: 60px 24px; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">Avalon <em>Lovasudvar</em></a>
+  <a href="index.html" class="nav-logo">Avalon <em>Lovasudvar</em></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#rolunk">Rólunk</a></li>
-    <li><a href="#programok">Programok</a></li>
-    <li><a href="#galeria">Galéria</a></li>
-    <li><a href="#arak">Árak</a></li>
-    <li><a href="#kapcsolat">Kapcsolat</a></li>
+    <li><a href="rolunk.html">Rólunk</a></li>
+    <li><a href="lovasoktatas.html">Lovasoktatás</a></li>
+    <li><a href="elmenypark.html">Élménypark</a></li>
+    <li><a href="galeria.html">Galéria</a></li>
+    <li><a href="kapcsolat.html">Kapcsolat</a></li>
   </ul>
-  <a href="#kapcsolat" class="nav-cta">Foglalj helyet</a>
-  <div class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+  <a href="kapcsolat.html" class="nav-cta">Foglalj helyet</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Menü">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" style="margin-top:0;padding:0;">
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-badge">Győrtől 7 km · Abda · OTP SZÉP kártya</div>
@@ -430,41 +145,17 @@ footer {
     <p class="hero-sub">Gyönyörű erdei környezetben várjuk lovagolni vágyókat, természetbarátokat és kikapcsolódni vágyó családokat Abdán.</p>
     <div class="hero-btns">
       <a href="#programok" class="btn-gold">Fedezd fel ↓</a>
-      <a href="#galeria" class="btn-outline">Galéria</a>
+      <a href="galeria.html" class="btn-outline" style="color:var(--cream);border-color:rgba(245,238,216,0.35);">Galéria</a>
     </div>
   </div>
 </section>
 
-<!-- INFO STRIP -->
+<!-- STRIP -->
 <div class="strip">
-  <div class="strip-item">
-    <div class="strip-icon">🐴</div>
-    <div class="strip-label">
-      <strong>Lovasoktatás</strong>
-      <span>kezdőktől haladókig</span>
-    </div>
-  </div>
-  <div class="strip-item">
-    <div class="strip-icon">🎂</div>
-    <div class="strip-label">
-      <strong>Születésnapok</strong>
-      <span>felejthetetlen élmény</span>
-    </div>
-  </div>
-  <div class="strip-item">
-    <div class="strip-icon">🌿</div>
-    <div class="strip-label">
-      <strong>Élménypark</strong>
-      <span>állatok, játék, kaland</span>
-    </div>
-  </div>
-  <div class="strip-item">
-    <div class="strip-icon">💳</div>
-    <div class="strip-label">
-      <strong>SZÉP kártya</strong>
-      <span>elfogadóhely</span>
-    </div>
-  </div>
+  <div class="strip-item"><div class="strip-icon">🐴</div><div class="strip-label"><strong>Lovasoktatás</strong><span>kezdőktől haladókig</span></div></div>
+  <div class="strip-item"><div class="strip-icon">🎂</div><div class="strip-label"><strong>Születésnapok</strong><span>felejthetetlen élmény</span></div></div>
+  <div class="strip-item"><div class="strip-icon">🌿</div><div class="strip-label"><strong>Élménypark</strong><span>állatok, játék, kaland</span></div></div>
+  <div class="strip-item"><div class="strip-icon">💳</div><div class="strip-label"><strong>SZÉP kártya</strong><span>elfogadóhely</span></div></div>
 </div>
 
 <!-- PROGRAMS -->
@@ -476,32 +167,20 @@ footer {
     <p class="section-body">Legyen szó első lovaglásról, rendszeres oktatásról, születésnapi buliról vagy egy nyugodt erdei napról – mindenki megtalálja nálunk a maga élményét.</p>
   </div>
   <div class="services-grid">
-    <a href="#kapcsolat" class="service-card">
-      <div class="service-card-img" style="background-image:url('https://static.wixstatic.com/media/d55dbd_0bfac918e7414f518b2e58436f6933c7~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_avif,quality_auto/d55dbd_0bfac918e7414f518b2e58436f6933c7~mv2.jpg')"></div>
-      <div class="service-card-overlay"></div>
-      <div class="service-card-body">
-        <p class="service-card-tag">Oktatás</p>
-        <p class="service-card-title">Lovasoktatás</p>
-        <p class="service-card-arrow">Részletek →</p>
-      </div>
+    <a href="lovasoktatas.html" class="service-card">
+      <div class="sc-img" style="background-image:url('https://static.wixstatic.com/media/d55dbd_0bfac918e7414f518b2e58436f6933c7~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_avif,quality_auto/d55dbd_0bfac918e7414f518b2e58436f6933c7~mv2.jpg')"></div>
+      <div class="sc-overlay"></div>
+      <div class="sc-body"><p class="sc-tag">Oktatás</p><p class="sc-title">Lovasoktatás</p><p class="sc-arrow">Részletek →</p></div>
     </a>
-    <a href="#kapcsolat" class="service-card">
-      <div class="service-card-img" style="background-image:url('https://static.wixstatic.com/media/d55dbd_e5b83d8ebe654da697e2aee7b4ce269b~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_avif,quality_auto/d55dbd_e5b83d8ebe654da697e2aee7b4ce269b~mv2.jpg')"></div>
-      <div class="service-card-overlay"></div>
-      <div class="service-card-body">
-        <p class="service-card-tag">Ünneplés</p>
-        <p class="service-card-title">Születésnap a lovardában</p>
-        <p class="service-card-arrow">Részletek →</p>
-      </div>
+    <a href="kapcsolat.html" class="service-card">
+      <div class="sc-img" style="background-image:url('https://static.wixstatic.com/media/d55dbd_e5b83d8ebe654da697e2aee7b4ce269b~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_avif,quality_auto/d55dbd_e5b83d8ebe654da697e2aee7b4ce269b~mv2.jpg')"></div>
+      <div class="sc-overlay"></div>
+      <div class="sc-body"><p class="sc-tag">Ünneplés</p><p class="sc-title">Születésnap a lovardában</p><p class="sc-arrow">Részletek →</p></div>
     </a>
-    <a href="#kapcsolat" class="service-card">
-      <div class="service-card-img" style="background-image:url('https://static.wixstatic.com/media/d55dbd_2a6c60692193482586a693ca35b5fba4~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_avif,quality_auto/d55dbd_2a6c60692193482586a693ca35b5fba4~mv2.jpg')"></div>
-      <div class="service-card-overlay"></div>
-      <div class="service-card-body">
-        <p class="service-card-tag">Kaland</p>
-        <p class="service-card-title">Élménypark & állatok</p>
-        <p class="service-card-arrow">Részletek →</p>
-      </div>
+    <a href="elmenypark.html" class="service-card">
+      <div class="sc-img" style="background-image:url('https://static.wixstatic.com/media/d55dbd_2a6c60692193482586a693ca35b5fba4~mv2.jpg/v1/fill/w_800,h_600,al_c,q_85,enc_avif,quality_auto/d55dbd_2a6c60692193482586a693ca35b5fba4~mv2.jpg')"></div>
+      <div class="sc-overlay"></div>
+      <div class="sc-body"><p class="sc-tag">Kaland</p><p class="sc-title">Élménypark & állatok</p><p class="sc-arrow">Részletek →</p></div>
     </a>
   </div>
 </section>
@@ -516,29 +195,21 @@ footer {
     <h2 class="section-title">Abdán, a pagony<br><em>szívében</em></h2>
     <div class="divider"></div>
     <p class="about-body">Győrtől mindössze 7 km-re, csodálatos erdei környezetben szeretettel várunk minden lovast, lovagolni vágyót, lótulajdonost és állatbarátot!</p>
-    <p class="about-body" style="margin-top:16px;">Lovardánkban a gyakorlati oktatás mellett az elméleti oktatásra is nagy figyelmet fordítunk. A legkisebbeket póni és voltizs lovaglással várjuk, haladóinkat díjlovaglással és díjugratással kezdőktől a versenyző szintig.</p>
-    <p class="about-body" style="margin-top:16px;">Igényes bértartási és lovaglási lehetőséget biztosítunk a környék egyik leghangulatosabb lovardájában.</p>
+    <p class="about-body">Lovardánkban a gyakorlati és elméleti oktatásra egyforma figyelmet fordítunk. A legkisebbeket póni és voltizs lovaglással várjuk, haladóinkat díjlovaglással és ugratással, kezdőktől a versenyző szintig.</p>
+    <p class="about-body">Igényes bértartási lehetőséget biztosítunk a környék egyik leghangulatosabb lovardájában.</p>
     <div class="stats">
-      <div>
-        <span class="stat-num">7 km</span>
-        <span class="stat-lbl">Győrtől</span>
-      </div>
-      <div>
-        <span class="stat-num">Abda</span>
-        <span class="stat-lbl">Helyszín</span>
-      </div>
-      <div>
-        <span class="stat-num">SZÉP</span>
-        <span class="stat-lbl">kártya elfogadó</span>
-      </div>
+      <div><span class="stat-num">7 km</span><span class="stat-lbl">Győrtől</span></div>
+      <div><span class="stat-num">Abda</span><span class="stat-lbl">Helyszín</span></div>
+      <div><span class="stat-num">SZÉP</span><span class="stat-lbl">kártya elfogadó</span></div>
     </div>
+    <div style="margin-top:32px;"><a href="rolunk.html" class="btn-dark">Tudj meg többet →</a></div>
   </div>
 </div>
 
-<!-- GALLERY -->
+<!-- GALLERY PREVIEW -->
 <section class="gallery" id="galeria">
   <p class="section-label">Galéria</p>
-  <h2 class="section-title">Képek a <em>lovardából</em></h2>
+  <h2 class="section-title" style="color:var(--cream);">Képek a <em>lovardából</em></h2>
   <div class="divider"></div>
   <div class="gallery-grid">
     <div class="gallery-item" onclick="openLightbox('https://static.wixstatic.com/media/d55dbd_c46cd0ad3e914c7f8eb6d44add9879ab~mv2.jpg/v1/fit/w_1400,h_1000,q_90,enc_avif,quality_auto/d55dbd_c46cd0ad3e914c7f8eb6d44add9879ab~mv2.jpg')">
@@ -546,12 +217,6 @@ footer {
     </div>
     <div class="gallery-item" onclick="openLightbox('https://static.wixstatic.com/media/d55dbd_6d018cb8360d4d9c8a22367e30fe9987~mv2.jpg/v1/fit/w_1000,h_1000,q_90,enc_avif,quality_auto/d55dbd_6d018cb8360d4d9c8a22367e30fe9987~mv2.jpg')">
       <img src="https://static.wixstatic.com/media/d55dbd_6d018cb8360d4d9c8a22367e30fe9987~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,enc_avif,quality_auto/d55dbd_6d018cb8360d4d9c8a22367e30fe9987~mv2.jpg" alt="Lovas élmény" loading="lazy">
-    </div>
-    <div class="gallery-item" onclick="openLightbox('https://static.wixstatic.com/media/d55dbd_634cfd4400ea449c8042f677caa9df33~mv2.jpg/v1/fit/w_1000,h_1000,q_90,enc_avif,quality_auto/d55dbd_634cfd4400ea449c8042f677caa9df33~mv2.jpg')">
-      <img src="https://static.wixstatic.com/media/d55dbd_634cfd4400ea449c8042f677caa9df33~mv2.jpg/v1/fill/w_500,h_500,al_c,q_80,enc_avif,quality_auto/d55dbd_634cfd4400ea449c8042f677caa9df33~mv2.jpg" alt="Lovas" loading="lazy">
-    </div>
-    <div class="gallery-item" onclick="openLightbox('https://static.wixstatic.com/media/e4f497_b008727331bf490784fd00f842f99422f000.jpg/v1/fill/w_1000,h_700,q_85,enc_avif,quality_auto/e4f497_b008727331bf490784fd00f842f99422f000.jpg')">
-      <img src="https://static.wixstatic.com/media/e4f497_b008727331bf490784fd00f842f99422f000.jpg/v1/fill/w_500,h_500,al_c,q_80,enc_avif,quality_auto/e4f497_b008727331bf490784fd00f842f99422f000.jpg" alt="Élménypark" loading="lazy">
     </div>
     <div class="gallery-item" onclick="openLightbox('https://static.wixstatic.com/media/d55dbd_9bb32b4622cb4b10ab8d13ca389de943~mv2.jpg/v1/fill/w_900,h_900,q_90,enc_avif,quality_auto/d55dbd_9bb32b4622cb4b10ab8d13ca389de943~mv2.jpg')">
       <img src="https://static.wixstatic.com/media/d55dbd_9bb32b4622cb4b10ab8d13ca389de943~mv2.jpg/v1/fill/w_450,h_450,q_80,enc_avif,quality_auto/d55dbd_9bb32b4622cb4b10ab8d13ca389de943~mv2.jpg" alt="Állatok" loading="lazy">
@@ -562,13 +227,8 @@ footer {
     <div class="gallery-item" onclick="openLightbox('https://static.wixstatic.com/media/d55dbd_2358e9c2c1684d15a89c1562ce990e2e~mv2.jpg/v1/fill/w_900,h_900,q_90,enc_avif,quality_auto/d55dbd_2358e9c2c1684d15a89c1562ce990e2e~mv2.jpg')">
       <img src="https://static.wixstatic.com/media/d55dbd_2358e9c2c1684d15a89c1562ce990e2e~mv2.jpg/v1/fill/w_450,h_450,q_80,enc_avif,quality_auto/d55dbd_2358e9c2c1684d15a89c1562ce990e2e~mv2.jpg" alt="Élmény" loading="lazy">
     </div>
-    <div class="gallery-item" onclick="openLightbox('https://static.wixstatic.com/media/d55dbd_db9d73c12f17450db0a316932bb3bef4~mv2.jpg/v1/fill/w_900,h_600,q_85,enc_avif,quality_auto/IMG_5481.jpg')">
-      <img src="https://static.wixstatic.com/media/d55dbd_db9d73c12f17450db0a316932bb3bef4~mv2.jpg/v1/fill/w_450,h_450,al_c,q_80,enc_avif,quality_auto/IMG_5481.jpg" alt="Lovaglás" loading="lazy">
-    </div>
-    <div class="gallery-item" onclick="openLightbox('https://static.wixstatic.com/media/d55dbd_25a9cc7d882b4087b298e003f6df2413~mv2.jpg/v1/fill/w_900,h_900,q_90,enc_avif,quality_auto/d55dbd_25a9cc7d882b4087b298e003f6df2413~mv2.jpg')">
-      <img src="https://static.wixstatic.com/media/d55dbd_25a9cc7d882b4087b298e003f6df2413~mv2.jpg/v1/fill/w_450,h_450,q_80,enc_avif,quality_auto/d55dbd_25a9cc7d882b4087b298e003f6df2413~mv2.jpg" alt="Kaland" loading="lazy">
-    </div>
   </div>
+  <div style="text-align:center;margin-top:40px;"><a href="galeria.html" class="btn-gold">Teljes galéria →</a></div>
 </section>
 
 <!-- PRICES -->
@@ -576,13 +236,13 @@ footer {
   <p class="section-label">Belépők & Árak</p>
   <h2 class="section-title">Átlátható <em>árjaink</em></h2>
   <div class="divider"></div>
-  <p class="section-body" style="max-width:560px;">Az alábbi árak az Élményparkra és a programokra vonatkoznak. Börcsi és Abdai lakcímkártyával 2000 Ft / fő.</p>
+  <p class="section-body" style="max-width:520px;">Börcsi és Abdai lakcímkártyával 2 000 Ft / fő. Az Élménypark területére háziállatot behozni tilos!</p>
   <div class="prices-grid">
     <div class="price-card">
-      <p class="price-title">Kisgyermek belépő</p>
+      <p class="price-title">Kisgyermek</p>
       <p class="price-desc">1–3 éves korig</p>
       <p class="price-amount">2 000 Ft</p>
-      <p class="price-unit">/ alkalom</p>
+      <p class="price-unit">/ fő</p>
       <ul class="price-list">
         <li>Játszótér korlátlan</li>
         <li>Állatsimogató</li>
@@ -590,7 +250,7 @@ footer {
       </ul>
     </div>
     <div class="price-card featured">
-      <p class="price-title">Felnőtt & gyermek belépő</p>
+      <p class="price-title">Felnőtt & gyermek</p>
       <p class="price-desc">3 éves kor felett</p>
       <p class="price-amount">3 500 Ft</p>
       <p class="price-unit">/ fő</p>
@@ -620,97 +280,131 @@ footer {
 <div class="contact" id="kapcsolat">
   <div>
     <p class="section-label">Kapcsolat</p>
-    <h2 class="section-title">Foglalj helyet<br>a <em>lovardában</em></h2>
+    <h2 class="section-title" style="color:var(--cream);">Foglalj helyet<br>a <em>lovardában</em></h2>
     <div class="divider"></div>
-    <p class="contact-sub">Szívesen várjuk kérdéseit és foglalásait! Írjon vagy hívjon minket, és hamarosan felvesszük Önnel a kapcsolatot.</p>
-    <br>
-    <p class="contact-sub" style="margin-top:12px;font-size:12px;color:rgba(245,238,216,0.35);">⚠ Az Élménypark területére háziállatot behozni tilos!</p>
+    <p class="contact-sub">Szívesen várjuk kérdéseidet és foglalásaidat! Írj vagy hívj minket.</p>
+    <p class="contact-notice">⚠ Az Élménypark területére háziállatot behozni tilos!</p>
   </div>
-  <div>
-    <div class="contact-items">
-      <a href="tel:+36303271278" class="contact-item">
-        <div class="contact-icon">📞</div>
-        <span>+36 30 327 1278</span>
-      </a>
-      <a href="mailto:info@avalonlovasudvar.com" class="contact-item">
-        <div class="contact-icon">✉</div>
-        <span>info@avalonlovasudvar.com</span>
-      </a>
-      <a href="https://maps.google.com/?q=Abda,+Hungary" target="_blank" class="contact-item">
-        <div class="contact-icon">📍</div>
-        <span>Abda – Győrtől 7 km</span>
-      </a>
-      <a href="https://www.facebook.com/avalonlovasudvar" target="_blank" class="contact-item">
-        <div class="contact-icon">f</div>
-        <span>avalonlovasudvar</span>
-      </a>
-      <a href="https://www.instagram.com/avalonlovasudvar_elmenypark/" target="_blank" class="contact-item">
-        <div class="contact-icon">◎</div>
-        <span>@avalonlovasudvar_elmenypark</span>
-      </a>
-    </div>
-    <div class="contact-map">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2700.0!2d17.7200!3d47.7200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476bbfa3a3a3a3a3%3A0x0!2sAbda%2C+Hungary!5e0!3m2!1shu!2shu!4v1"
-        allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-        title="Avalon Lovasudvar térképen">
-      </iframe>
-    </div>
+  <div class="contact-items">
+    <a href="tel:+36303271278" class="contact-item"><div class="contact-icon">📞</div><span>+36 30 327 1278</span></a>
+    <a href="mailto:info@avalonlovasudvar.com" class="contact-item"><div class="contact-icon">✉</div><span>info@avalonlovasudvar.com</span></a>
+    <a href="https://maps.google.com/?q=Abda+Pagony+27+Hungary" target="_blank" class="contact-item"><div class="contact-icon">📍</div><span>9151 Abda, Pagony 27.</span></a>
+    <a href="https://www.facebook.com/avalonlovasudvar" target="_blank" class="contact-item"><div class="contact-icon">f</div><span>avalonlovasudvar</span></a>
+    <a href="https://www.instagram.com/avalonlovasudvar_elmenypark/" target="_blank" class="contact-item"><div class="contact-icon">◎</div><span>@avalonlovasudvar_elmenypark</span></a>
+    <div style="margin-top:8px;"><a href="kapcsolat.html" class="btn-gold" style="width:100%;text-align:center;">Kapcsolatfelvétel →</a></div>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-logo">Avalon Lovasudvar</span>
-  <div class="footer-links">
-    <a href="https://www.avalonlovasudvar.com/_files/ugd/d55dbd_5d29ae244cf04345bf7c3756ae558aac.pdf" target="_blank">Adatvédelmi tájékoztató</a>
-    <a href="https://www.facebook.com/avalonlovasudvar" target="_blank">Facebook</a>
-    <a href="https://www.instagram.com/avalonlovasudvar_elmenypark/" target="_blank">Instagram</a>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="footer-logo">Avalon Lovasudvar</span>
+      <span class="footer-tagline">Győrtől 7 km-re, Abdán, erdei környezetben. Lovaglás, élmény, természet.</span>
+    </div>
+    <div class="footer-col">
+      <h4>Oldalak</h4>
+      <a href="rolunk.html">Rólunk</a>
+      <a href="lovasoktatas.html">Lovasoktatás</a>
+      <a href="elmenypark.html">Élménypark</a>
+      <a href="galeria.html">Galéria</a>
+      <a href="kapcsolat.html">Kapcsolat</a>
+    </div>
+    <div class="footer-col">
+      <h4>Elérhetőség</h4>
+      <p>9151 Abda, Pagony 27.</p>
+      <a href="tel:+36303271278">+36 30 327 1278</a>
+      <a href="mailto:info@avalonlovasudvar.com">info@avalonlovasudvar.com</a>
+    </div>
+    <div class="footer-col">
+      <h4>Közösség</h4>
+      <a href="https://www.facebook.com/avalonlovasudvar" target="_blank">Facebook</a>
+      <a href="https://www.instagram.com/avalonlovasudvar_elmenypark/" target="_blank">Instagram</a>
+      <p style="margin-top:12px;">OTP SZÉP kártya elfogadóhely</p>
+    </div>
   </div>
-  <span class="footer-copy">© 2025 Avalon Lovasudvar</span>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 Avalon Lovasudvar – KLUGTEK Kft.</span>
+    <div class="footer-legal">
+      <a href="adatvedelem.html">Adatvédelmi tájékoztató</a>
+      <a href="cookie.html">Cookie szabályzat</a>
+      <a href="#" id="cookieSettingsFooter">Cookie beállítások</a>
+    </div>
+  </div>
 </footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" class="hidden">
+  <p class="cookie-text">
+    Weboldalunk sütiket (cookie-kat) használ a jobb felhasználói élmény érdekében.
+    <a href="cookie.html">Részletek</a> · <a href="adatvedelem.html">Adatvédelem</a>
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-settings" id="cookieSettings">Beállítások</button>
+    <button class="cookie-decline" id="cookieDecline">Csak szükséges</button>
+    <button class="cookie-accept" id="cookieAccept">Mindet elfogadom</button>
+  </div>
+</div>
+
+<!-- COOKIE MODAL -->
+<div id="cookie-modal">
+  <div class="cookie-modal-box">
+    <div class="cookie-modal-header">
+      <h2>Cookie beállítások</h2>
+    </div>
+    <div class="cookie-modal-body">
+      <div class="cookie-category">
+        <div class="cookie-cat-header">
+          <h3>Szükséges sütik</h3>
+          <label class="toggle-wrap"><input type="checkbox" checked disabled><span class="toggle-slider"></span></label>
+        </div>
+        <p class="cookie-cat-desc">Ezek a sütik elengedhetetlenek az oldal működéséhez (munkamenet-kezelés, cookie-beleegyezés tárolása). Nem tilthatók le.</p>
+      </div>
+      <div class="cookie-category">
+        <div class="cookie-cat-header">
+          <h3>Analitikai sütik</h3>
+          <label class="toggle-wrap"><input type="checkbox" id="toggleAnalytics"><span class="toggle-slider"></span></label>
+        </div>
+        <p class="cookie-cat-desc">Google Analytics segítségével anonim látogatottsági statisztikát gyűjtünk, hogy az oldalt folyamatosan fejleszthessük.</p>
+      </div>
+      <div class="cookie-category">
+        <div class="cookie-cat-header">
+          <h3>Marketing sütik</h3>
+          <label class="toggle-wrap"><input type="checkbox" id="toggleMarketing"><span class="toggle-slider"></span></label>
+        </div>
+        <p class="cookie-cat-desc">Facebook és közösségi média sütik, amelyek lehetővé teszik a személyre szabott hirdetések megjelenítését.</p>
+      </div>
+    </div>
+    <div class="cookie-modal-footer">
+      <button class="btn-outline" id="cookieModalClose">Mégse</button>
+      <button class="btn-gold" id="cookieSaveSettings">Mentés</button>
+    </div>
+  </div>
+</div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <img id="lightboxImg" src="" alt="Galéria kép">
+  <button class="lightbox-close">✕</button>
+  <img id="lightboxImg" src="" alt="">
 </div>
 
+<script src="shared.js"></script>
 <script>
-// Hero parallax
+// Hero
 const heroBg = document.getElementById('heroBg');
-heroBg.style.backgroundImage = "url('https://static.wixstatic.com/media/d55dbd_387e15f545924a46989c31b4b29434a9~mv2.jpg/v1/fill/w_1920,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d55dbd_387e15f545924a46989c31b4b29434a9~mv2.jpg')";
+heroBg.style.backgroundImage = "url('https://static.wixstatic.com/media/d55dbd_387e15f545924a46989c31b4b29434a9~mv2.jpg/v1/fill/w_1920,h_1280,al_c,q_85,enc_avif,quality_auto/d55dbd_387e15f545924a46989c31b4b29434a9~mv2.jpg')";
 setTimeout(() => heroBg.classList.add('loaded'), 100);
-
-window.addEventListener('scroll', () => {
-  const y = window.scrollY;
-  heroBg.style.transform = `translateY(${y * 0.3}px)`;
-});
+window.addEventListener('scroll', () => { heroBg.style.transform = `translateY(${window.scrollY*0.28}px)`; });
 
 // Lightbox
-function openLightbox(src) {
-  document.getElementById('lightboxImg').src = src;
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+function openLightbox(src) { document.getElementById('lightboxImg').src = src; document.getElementById('lightbox').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
 
-// Smooth nav active state
-const sections = document.querySelectorAll('section[id], div[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 120) current = s.id;
-  });
-  navLinks.forEach(a => {
-    a.style.color = a.getAttribute('href') === '#'+current ? '#2C2A1E' : '';
-  });
+// Footer cookie settings link
+document.getElementById('cookieSettingsFooter')?.addEventListener('click', e => {
+  e.preventDefault();
+  document.getElementById('cookie-modal').classList.add('open');
 });
 </script>
 </body>
