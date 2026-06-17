@@ -120,7 +120,10 @@
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo">Avalon <em>Lovasudvar</em></a>
+  <a href="index.html" class="nav-logo-wrap">
+    <img src="https://static.wixstatic.com/media/d55dbd_452b9f5e8e134b6d811be1b0debe51c1~mv2.png/v1/crop/x_180,y_124,w_588,h_555/fill/w_120,h_114,al_c,q_85,enc_avif,quality_auto/d55dbd_452b9f5e8e134b6d811be1b0debe51c1~mv2.png" alt="Avalon Lovasudvar logó" class="nav-logo-img">
+    <span class="nav-logo">Avalon <em>Lovasudvar</em></span>
+  </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="rolunk.html">Rólunk</a></li>
     <li><a href="lovasoktatas.html">Lovasoktatás</a></li>
@@ -299,8 +302,11 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <span class="footer-logo">Avalon Lovasudvar</span>
-      <span class="footer-tagline">Győrtől 7 km-re, Abdán, erdei környezetben. Lovaglás, élmény, természet.</span>
+      <div class="footer-logo-wrap">
+        <img src="https://static.wixstatic.com/media/d55dbd_452b9f5e8e134b6d811be1b0debe51c1~mv2.png/v1/crop/x_180,y_124,w_588,h_555/fill/w_120,h_114,al_c,q_85,enc_avif,quality_auto/d55dbd_452b9f5e8e134b6d811be1b0debe51c1~mv2.png" alt="Avalon logó" class="footer-logo-img">
+        <span class="footer-logo">Avalon Lovasudvar</span>
+      </div>
+      <span class="footer-tagline">Győrtől 7 km-re, Abdán, gyönyörű erdei környezetben.</span>
     </div>
     <div class="footer-col">
       <h4>Oldalak</h4>
@@ -318,17 +324,17 @@
     </div>
     <div class="footer-col">
       <h4>Közösség</h4>
-      <a href="https://www.facebook.com/avalonlovasudvar" target="_blank">Facebook</a>
-      <a href="https://www.instagram.com/avalonlovasudvar_elmenypark/" target="_blank">Instagram</a>
-      <p style="margin-top:12px;">OTP SZÉP kártya elfogadóhely</p>
+      <a href="https://www.facebook.com/avalonlovasudvar" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/avalonlovasudvar_elmenypark/" target="_blank" rel="noopener">Instagram</a>
+      <p style="margin-top:12px; font-size:11px;">OTP SZÉP kártya elfogadóhely</p>
     </div>
   </div>
   <div class="footer-bottom">
     <span class="footer-copy">© 2025 Avalon Lovasudvar – KLUGTEK Kft.</span>
     <div class="footer-legal">
       <a href="adatvedelem.html">Adatvédelmi tájékoztató</a>
-      <a href="cookie.html">Cookie szabályzat</a>
-      <a href="#" id="cookieSettingsFooter">Cookie beállítások</a>
+      <a href="cookie.html">Cookie-szabályzat</a>
+      <a href="#" id="cookieSettingsFooter">Cookie-beállítások</a>
     </div>
   </div>
 </footer>
@@ -337,10 +343,10 @@
 <div id="cookie-banner" class="hidden">
   <p class="cookie-text">
     Weboldalunk sütiket (cookie-kat) használ a jobb felhasználói élmény érdekében.
-    <a href="cookie.html">Részletek</a> · <a href="adatvedelem.html">Adatvédelem</a>
+    Olvassa el <a href="cookie.html">cookie-szabályzatunkat</a> és <a href="adatvedelem.html">adatvédelmi tájékoztatónkat</a>.
   </p>
   <div class="cookie-btns">
-    <button class="cookie-settings" id="cookieSettings">Beállítások</button>
+    <button class="cookie-settings-btn" id="cookieSettings">Beállítások</button>
     <button class="cookie-decline" id="cookieDecline">Csak szükséges</button>
     <button class="cookie-accept" id="cookieAccept">Mindet elfogadom</button>
   </div>
@@ -349,30 +355,28 @@
 <!-- COOKIE MODAL -->
 <div id="cookie-modal">
   <div class="cookie-modal-box">
-    <div class="cookie-modal-header">
-      <h2>Cookie beállítások</h2>
-    </div>
+    <div class="cookie-modal-header"><h2>Cookie-beállítások</h2></div>
     <div class="cookie-modal-body">
       <div class="cookie-category">
         <div class="cookie-cat-header">
           <h3>Szükséges sütik</h3>
           <label class="toggle-wrap"><input type="checkbox" checked disabled><span class="toggle-slider"></span></label>
         </div>
-        <p class="cookie-cat-desc">Ezek a sütik elengedhetetlenek az oldal működéséhez (munkamenet-kezelés, cookie-beleegyezés tárolása). Nem tilthatók le.</p>
+        <p class="cookie-cat-desc">Ezek a sütik elengedhetetlenek az oldal működéséhez. Nem tilthatók le.</p>
       </div>
       <div class="cookie-category">
         <div class="cookie-cat-header">
           <h3>Analitikai sütik</h3>
           <label class="toggle-wrap"><input type="checkbox" id="toggleAnalytics"><span class="toggle-slider"></span></label>
         </div>
-        <p class="cookie-cat-desc">Google Analytics segítségével anonim látogatottsági statisztikát gyűjtünk, hogy az oldalt folyamatosan fejleszthessük.</p>
+        <p class="cookie-cat-desc">Google Analytics – anonim látogatottsági statisztikák gyűjtése az oldal fejlesztéséhez.</p>
       </div>
       <div class="cookie-category">
         <div class="cookie-cat-header">
           <h3>Marketing sütik</h3>
           <label class="toggle-wrap"><input type="checkbox" id="toggleMarketing"><span class="toggle-slider"></span></label>
         </div>
-        <p class="cookie-cat-desc">Facebook és közösségi média sütik, amelyek lehetővé teszik a személyre szabott hirdetések megjelenítését.</p>
+        <p class="cookie-cat-desc">Facebook és közösségi média sütik személyre szabott hirdetésekhez.</p>
       </div>
     </div>
     <div class="cookie-modal-footer">
@@ -388,6 +392,57 @@
   <img id="lightboxImg" src="" alt="">
 </div>
 
+<div id="tabor-modal">
+  <div class="tabor-box">
+    <button class="tabor-close" id="taborClose" aria-label="Bezárás">✕</button>
+    <div class="tabor-body">
+      <div class="tabor-logo">
+        <img src="https://static.wixstatic.com/media/d55dbd_452b9f5e8e134b6d811be1b0debe51c1~mv2.png/v1/crop/x_180,y_124,w_588,h_555/fill/w_120,h_114,al_c,q_85,enc_avif,quality_auto/d55dbd_452b9f5e8e134b6d811be1b0debe51c1~mv2.png" alt="Avalon logó">
+        <span class="tabor-logo-text">Avalon <em>Lovasudvar</em></span>
+      </div>
+      <p class="tabor-title">Nyári <strong>Tábor</strong></p>
+      <p class="tabor-sub">Az Avalon Lovasudvar és Élményparkban – Abda, 2025</p>
+      <div class="tabor-price-row">
+        <div class="tabor-price-card">
+          <p class="tabor-price-label">Tábor ára</p>
+          <p class="tabor-price-val">85 000 Ft</p>
+          <p style="font-size:11px;color:rgba(245,238,216,0.4);margin-top:2px;">/ 5 nap</p>
+        </div>
+        <div class="tabor-price-card">
+          <p class="tabor-price-label">Napi jegy</p>
+          <p class="tabor-price-val">20 000 Ft</p>
+          <p style="font-size:11px;color:rgba(245,238,216,0.4);margin-top:2px;">/ nap</p>
+        </div>
+      </div>
+      <div class="tabor-turnusok">
+        <h4>Turnusok 2025-ben</h4>
+        <p>Június 22–26. &nbsp;·&nbsp; Július 6–10. &nbsp;·&nbsp; Július 13–17.<br>Július 20–24. &nbsp;·&nbsp; Július 27–31. &nbsp;·&nbsp; Augusztus 3–7.<br>Augusztus 10–14.</p>
+      </div>
+      <div class="tabor-features">
+        <div class="tabor-feat">
+          <div class="tabor-feat-icon">🍽️</div>
+          <p class="tabor-feat-label">Napközis ellátás<br>3× étkezés<br>Korlátlan innivaló</p>
+        </div>
+        <div class="tabor-feat">
+          <div class="tabor-feat-icon">🐴</div>
+          <p class="tabor-feat-label">Lovas<br>foglalkozás</p>
+        </div>
+        <div class="tabor-feat">
+          <div class="tabor-feat-icon">🎨</div>
+          <p class="tabor-feat-label">Elméleti oktatás<br>Kézműves foglalkozás<br>Kisállat-gondozás</p>
+        </div>
+      </div>
+      <div class="tabor-cta-row">
+        <a href="kapcsolat.html" class="btn-gold" id="taborCta">Érdeklődöm →</a>
+        <a href="tel:+36303271278" class="btn-outline">+36 30 327 1278</a>
+      </div>
+      <label class="tabor-dont-show">
+        <input type="checkbox" id="taborDontShow">
+        <span>Ne jelenjen meg újra</span>
+      </label>
+    </div>
+  </div>
+</div>
 <script src="shared.js"></script>
 <script>
 // Hero

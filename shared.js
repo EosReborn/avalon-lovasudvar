@@ -1,78 +1,113 @@
 // ── NAV TOGGLE ──
 const navToggle = document.getElementById('navToggle');
-const navLinks = document.getElementById('navLinks');
+const navLinks  = document.getElementById('navLinks');
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.addEventListener('click', e => {
+    if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove('open');
+    }
+  });
 }
 
-// ── ACTIVE NAV LINK ──
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach(a => {
-  if (a.getAttribute('href') === currentPage) a.classList.add('active');
-});
-
-// ── COOKIE BANNER ──
-const COOKIE_KEY = 'avalon_cookie_consent';
+// ── COOKIE UTILS ──
+const COOKIE_KEY  = 'avalon_cookie_consent';
+const TABOR_KEY   = 'avalon_tabor_seen';
 
 function getCookieConsent() {
   try { return JSON.parse(localStorage.getItem(COOKIE_KEY)); } catch { return null; }
 }
 function setCookieConsent(val) {
-  localStorage.setItem(COOKIE_KEY, JSON.stringify(val));
+  try { localStorage.setItem(COOKIE_KEY, JSON.stringify({ ...val, ts: Date.now() })); } catch {}
 }
 
+// ── COOKIE BANNER ──
 const banner = document.getElementById('cookie-banner');
-const modal = document.getElementById('cookie-modal');
+if (banner) {
+  if (!getCookieConsent()) {
+    setTimeout(() => banner.classList.remove('hidden'), 900);
+  } else {
+    banner.classList.add('hidden');
+  }
+}
 
 function hideBanner() {
-  if (banner) banner.classList.add('hidden');
+  const b = document.getElementById('cookie-banner');
+  if (b) b.classList.add('hidden');
 }
 
-// Show banner if no consent yet
-if (!getCookieConsent() && banner) {
-  setTimeout(() => banner.classList.remove('hidden'), 800);
-} else if (banner) {
-  banner.classList.add('hidden');
-}
-
-// Accept all
 document.getElementById('cookieAccept')?.addEventListener('click', () => {
-  setCookieConsent({ necessary: true, analytics: true, marketing: true, ts: Date.now() });
+  setCookieConsent({ necessary: true, analytics: true, marketing: true });
   hideBanner();
 });
-
-// Decline non-essential
 document.getElementById('cookieDecline')?.addEventListener('click', () => {
-  setCookieConsent({ necessary: true, analytics: false, marketing: false, ts: Date.now() });
+  setCookieConsent({ necessary: true, analytics: false, marketing: false });
   hideBanner();
 });
-
-// Open settings modal
 document.getElementById('cookieSettings')?.addEventListener('click', () => {
-  if (modal) modal.classList.add('open');
+  openCookieModal();
 });
-document.getElementById('cookieModalClose')?.addEventListener('click', () => {
-  if (modal) modal.classList.remove('open');
-});
-document.getElementById('cookieSaveSettings')?.addEventListener('click', () => {
-  const analytics = document.getElementById('toggleAnalytics')?.checked || false;
-  const marketing = document.getElementById('toggleMarketing')?.checked || false;
-  setCookieConsent({ necessary: true, analytics, marketing, ts: Date.now() });
-  if (modal) modal.classList.remove('open');
-  hideBanner();
-});
-// Close modal on backdrop click
-modal?.addEventListener('click', (e) => {
-  if (e.target === modal) modal.classList.remove('open');
+document.getElementById('cookieSettingsFooter')?.addEventListener('click', e => {
+  e.preventDefault(); openCookieModal();
 });
 
-// Fill in saved prefs when opening modal
-document.getElementById('cookieSettings')?.addEventListener('click', () => {
+function openCookieModal() {
+  const modal = document.getElementById('cookie-modal');
+  if (!modal) return;
   const saved = getCookieConsent();
   if (saved) {
     const ta = document.getElementById('toggleAnalytics');
     const tm = document.getElementById('toggleMarketing');
-    if (ta) ta.checked = saved.analytics;
-    if (tm) tm.checked = saved.marketing;
+    if (ta) ta.checked = !!saved.analytics;
+    if (tm) tm.checked = !!saved.marketing;
+  }
+  modal.classList.add('open');
+}
+
+document.getElementById('cookieModalClose')?.addEventListener('click', () => {
+  document.getElementById('cookie-modal')?.classList.remove('open');
+});
+document.getElementById('cookieSaveSettings')?.addEventListener('click', () => {
+  const analytics = document.getElementById('toggleAnalytics')?.checked || false;
+  const marketing = document.getElementById('toggleMarketing')?.checked || false;
+  setCookieConsent({ necessary: true, analytics, marketing });
+  document.getElementById('cookie-modal')?.classList.remove('open');
+  hideBanner();
+});
+document.getElementById('cookie-modal')?.addEventListener('click', e => {
+  if (e.target === document.getElementById('cookie-modal')) {
+    document.getElementById('cookie-modal').classList.remove('open');
   }
 });
+
+// ── NYÁRI TÁBOR POP-UP ──
+(function() {
+  const modal = document.getElementById('tabor-modal');
+  if (!modal) return;
+
+  // Ne mutassuk ha a user bejelölte "ne mutasd újra"
+  try {
+    if (localStorage.getItem(TABOR_KEY) === 'hidden') return;
+  } catch {}
+
+  // 2.5 másodperc késleltetéssel jelenik meg
+  setTimeout(() => {
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }, 2500);
+
+  function closeTaborModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    try {
+      if (document.getElementById('taborDontShow')?.checked) {
+        localStorage.setItem(TABOR_KEY, 'hidden');
+      }
+    } catch {}
+  }
+
+  document.getElementById('taborClose')?.addEventListener('click', closeTaborModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeTaborModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeTaborModal(); });
+  document.getElementById('taborCta')?.addEventListener('click', closeTaborModal);
+})();
